@@ -725,6 +725,112 @@ function throttle(func, limit) {
 }
 
 // ============================================
+// SYSTÈME D'AUTHENTIFICATION - CAMPUS UNIVERSITAIRE DE NATITINGOU
+// ============================================
+
+// Clé localStorage pour stocker les utilisateurs
+const USERS_KEY = 'FAST_USERS';
+const CURRENT_USER_KEY = 'currentUser';
+
+// Utilisateur de démonstration (créé automatiquement si aucun utilisateur)
+const DEMO_USER = {
+    id: 'demo-001',
+    nom: 'Étudiant Démo',
+    email: 'demo@fast-nati.edu',
+    password: 'password',
+    etablissement: 'FAST',
+    niveau: 'L2',
+    specialite: 'informatique',
+    dateInscription: new Date().toISOString()
+};
+
+// Initialiser les utilisateurs avec le compte démo si vide
+function initUsers() {
+    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
+    if (users.length === 0) {
+        localStorage.setItem(USERS_KEY, JSON.stringify([DEMO_USER]));
+    }
+}
+
+// Appeler l'initialisation au chargement
+initUsers();
+
+// Fonction d'authentification
+function authenticateUser(email, password) {
+    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
+    const user = users.find(u => u.email === email && u.password === password);
+    
+    if (user) {
+        // Ne pas retourner le mot de passe
+        const { password, ...userWithoutPassword } = user;
+        return userWithoutPassword;
+    }
+    return null;
+}
+
+// Créer un nouveau compte utilisateur
+function createUser(userData) {
+    const users = JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
+    
+    // Vérifier si l'email existe déjà
+    if (users.some(u => u.email === userData.email)) {
+        return { success: false, message: 'Cet email est déjà utilisé.' };
+    }
+    
+    // Créer le nouvel utilisateur
+    const newUser = {
+        id: 'user-' + Date.now(),
+        ...userData,
+        dateInscription: new Date().toISOString()
+    };
+    
+    users.push(newUser);
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    
+    return { success: true, user: newUser };
+}
+
+// Vérifier si l'utilisateur est connecté
+function isUserLoggedIn() {
+    return sessionStorage.getItem(CURRENT_USER_KEY) !== null;
+}
+
+// Récupérer l'utilisateur connecté
+function getCurrentUser() {
+    const user = sessionStorage.getItem(CURRENT_USER_KEY);
+    return user ? JSON.parse(user) : null;
+}
+
+// Sauvegarder l'utilisateur connecté
+function setCurrentUser(user) {
+    sessionStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user));
+}
+
+// Déconnexion
+function logoutUser() {
+    sessionStorage.removeItem(CURRENT_USER_KEY);
+    sessionStorage.removeItem('selectedSpecialite');
+    showNotification('Déconnexion réussie', 'success');
+    setTimeout(() => {
+        window.location.href = 'index.html';
+    }, 1000);
+}
+
+// Protection des routes (à appeler sur les pages protégées)
+function requireAuth() {
+    if (!isUserLoggedIn()) {
+        window.location.href = 'login.html';
+        return false;
+    }
+    return true;
+}
+
+// Récupérer tous les utilisateurs (pour admin)
+function getAllUsers() {
+    return JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
+}
+
+// ============================================
 // EXPORT DES FONCTIONS
 // ============================================
 window.FAST = {
@@ -734,5 +840,10 @@ window.FAST = {
     animateCounter,
     typeWriter,
     debounce,
-    throttle
+    throttle,
+    authenticateUser,
+    isUserLoggedIn,
+    getCurrentUser,
+    logoutUser,
+    requireAuth
 };

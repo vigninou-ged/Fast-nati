@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tableau de bord étudiant - Campus Universitaire de Natitingou.">
+    <title>Tableau de bord - FAST-NATI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="shortcut icon" href="images/favicon-32x32.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-red-light));
+            padding: 120px 0 60px;
+            color: var(--white);
+        }
+        
+        .dashboard-header h1 {
+            color: var(--white);
+            font-size: 2rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .dashboard-header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        
+        .user-welcome {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-lg);
+        }
+        
+        .user-avatar {
+            width: 80px;
+            height: 80px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--white);
+        }
+        
+        .profile-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .profile-card h3 {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            color: var(--gray-800);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .profile-card h3 i {
+            color: var(--primary-red);
+        }
+        
+        .profile-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+        }
+        
+        .profile-item {
+            text-align: center;
+            padding: var(--spacing-md);
+            background: var(--gray-50);
+            border-radius: var(--border-radius-md);
+        }
+        
+        .profile-item-label {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .profile-item-value {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--gray-800);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-red-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            color: var(--white);
+            font-size: 1.25rem;
+        }
+        
+        .stat-value {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--gray-800);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+        }
+        
+        .section-title-with-filter {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-xl);
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+        
+        .filter-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            background: var(--gray-100);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--gray-600);
+        }
+        
+        .filter-badge i {
+            color: var(--primary-red);
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+        }
+        
+        .resource-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--gray-200);
+            transition: all var(--transition-normal);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-red);
+        }
+        
+        .resource-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gray-100);
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-red);
+            font-size: 1.25rem;
+        }
+        
+        .resource-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--gray-800);
+        }
+        
+        .resource-meta {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        
+        .resource-meta-item {
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+        
+        .resource-meta-item i {
+            color: var(--primary-red);
+        }
+        
+        .no-resources {
+            text-align: center;
+            padding: var(--spacing-3xl);
+            background: var(--gray-50);
+            border-radius: var(--border-radius-lg);
+        }
+        
+        .no-resources i {
+            font-size: 4rem;
+            color: var(--gray-300);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .no-resources h3 {
+            color: var(--gray-600);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
+        }
+        
+        .quick-action-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            transition: all var(--transition-normal);
+            cursor: pointer;
+        }
+        
+        .quick-action-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .quick-action-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-red-light));
+            border-radius: var(--border-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.25rem;
+        }
+        
+        .quick-action-content h4 {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xs);
+            color: var(--gray-800);
+        }
+        
+        .quick-action-content p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            margin: 0;
+        }
+        
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .resources-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .profile-info {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .user-welcome {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-navbar.png" alt="FAST-NATI" class="logo-img">
+                <span class="logo-brand">FAST-NATI</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="dashboard.html" class="nav-link active">Mon espace</a></li>
+                    <li><a href="banque-epreuves.html" class="nav-link">Banque d'épreuves</a></li>
+                    <li><a href="ressources.html" class="nav-link">Ressources</a></li>
+                    <li><a href="actualites.html" class="nav-link">Actualités</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="btn-quick-access" id="logout-btn" style="background: var(--gray-600);">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Déconnexion
+                </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Dashboard Header -->
+        <section class="dashboard-header">
+            <div class="container">
+                <div class="user-welcome">
+                    <div class="user-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div>
+                        <h1>Bienvenue, <span id="user-name">Étudiant</span> !</h1>
+                        <p>Voici votre tableau de bord personnalisé</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Stats Section -->
+        <section class="section" style="padding-top: var(--spacing-xl);">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-value" id="stat-epreuves">0</div>
+                        <div class="stat-label">Épreuves disponibles</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-value" id="stat-cours">0</div>
+                        <div class="stat-label">Cours</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <div class="stat-value" id="stat-td">0</div>
+                        <div class="stat-label">TD & TP</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="stat-value" id="stat-annee">2024</div>
+                        <div class="stat-label">Année académique</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Profile Section -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="profile-card">
+                    <h3><i class="fas fa-id-card"></i> Mon profil</h3>
+                    <div class="profile-info">
+                        <div class="profile-item">
+                            <div class="profile-item-label">Établissement</div>
+                            <div class="profile-item-value" id="profile-etablissement">-</div>
+                        </div>
+                        <div class="profile-item">
+                            <div class="profile-item-label">Niveau</div>
+                            <div class="profile-item-value" id="profile-niveau">-</div>
+                        </div>
+                        <div class="profile-item">
+                            <div class="profile-item-label">Spécialité</div>
+                            <div class="profile-item-value" id="profile-specialite">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Actions -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <h2 class="section-title">Accès rapide</h2>
+                <div class="quick-actions">
+                    <a href="banque-epreuves.html" class="quick-action-card">
+                        <div class="quick-action-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="quick-action-content">
+                            <h4>Banque d'épreuves</h4>
+                            <p>Consultez les épreuves de votre spécialité</p>
+                        </div>
+                    </a>
+                    <a href="ressources.html" class="quick-action-card">
+                        <div class="quick-action-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="quick-action-content">
+                            <h4>Ressources académiques</h4>
+                            <p>Cours, TD et TP de votre niveau</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ressources filtrées -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title-with-filter">
+                    <h2 class="section-title" style="margin: 0;">Mes ressources</h2>
+                    <div class="filter-badge">
+                        <i class="fas fa-filter"></i>
+                        <span id="filter-text">Filtré selon votre profil</span>
+                    </div>
+                </div>
+                
+                <div id="resources-container">
+                    <div class="resources-grid" id="resources-grid">
+                        <!-- Les ressources seront injectées ici par JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="no-resources" id="no-resources" style="display: none;">
+                    <i class="fas fa-folder-open"></i>
+                    <h3>Aucune ressource disponible</h3>
+                    <p>Aucune ressource ne correspond à votre profil pour le moment.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-navbar.png" alt="FAST Natitingou" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            FAST
+                            <span>Faculté des Sciences et Techniques de Natitingou</span>
+                        </div>
+                    </div>
+                    <p class="footer-text">
+                        Le Campus Universitaire de Natitingou regroupe la FAST et l'ENS, deux établissements d'excellence dédiés aux sciences.
+                    </p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Accueil</a></li>
+                        <li><a href="dashboard.html" class="footer-link">Mon espace</a></li>
+                        <li><a href="banque-epreuves.html" class="footer-link">Banque d'épreuves</a></li>
+                        <li><a href="ressources.html" class="footer-link">Ressources</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3 class="footer-title">Liens utiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="departements.html" class="footer-link">Départements</a></li>
+                        <li><a href="etudiants.html" class="footer-link">Espace étudiants</a></li>
+                        <li><a href="actualites.html" class="footer-link">Actualités</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Campus Universitaire de Natitingou<br>Natitingou, Bénin</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@fast-nati.edu</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2024 Campus Universitaire de Natitingou - FAST & ENS. Tous droits réservés.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Données mock des ressources
+        const ressourcesData = [
+            // Cours - FAST - L1 - Informatique
+            { id: 1, type: 'cours', titre: 'Introduction à la programmation', etablissement: 'FAST', niveau: 'L1', specialite: 'informatique', matiere: 'Programmation', taille: '2.5 MB' },
+            { id: 2, type: 'cours', titre: 'Algorithmes de base', etablissement: 'FAST', niveau: 'L1', specialite: 'informatique', matiere: 'Algorithmes', taille: '1.8 MB' },
+            { id: 3, type: 'td', titre: 'TD Programmation C - Série 1', etablissement: 'FAST', niveau: 'L1', specialite: 'informatique', matiere: 'Programmation', taille: '0.5 MB' },
+            { id: 4, type: 'tp', titre: 'TP Programmation C - Lab 1', etablissement: 'FAST', niveau: 'L1', specialite: 'informatique', matiere: 'Programmation', taille: '1.2 MB' },
+            
+            // Cours - FAST - L2 - Informatique
+            { id: 5, type: 'cours', titre: 'Programmation Orientée Objet', etablissement: 'FAST', niveau: 'L2', specialite: 'informatique', matiere: 'POO', taille: '3.2 MB' },
+            { id: 6, type: 'cours', titre: 'Bases de Données relationnelles', etablissement: 'FAST', niveau: 'L2', specialite: 'informatique', matiere: 'BDD', taille: '2.8 MB' },
+            { id: 7, type: 'td', titre: 'TD SQL Avancé', etablissement: 'FAST', niveau: 'L2', specialite: 'informatique', matiere: 'BDD', taille: '0.8 MB' },
+            
+            // Cours - FAST - L3 - Informatique
+            { id: 8, type: 'cours', titre: 'Développement Web Full Stack', etablissement: 'FAST', niveau: 'L3', specialite: 'informatique', matiere: 'Web', taille: '4.5 MB' },
+            { id: 9, type: 'cours', titre: 'Intelligence Artificielle', etablissement: 'FAST', niveau: 'L3', specialite: 'informatique', matiere: 'IA', taille: '3.8 MB' },
+            
+            // Cours - FAST - Mathématiques
+            { id: 10, type: 'cours', titre: 'Analyse Mathématique I', etablissement: 'FAST', niveau: 'L1', specialite: 'mathematiques', matiere: 'Analyse', taille: '2.1 MB' },
+            { id: 11, type: 'cours', titre: 'Algèbre Linéaire', etablissement: 'FAST', niveau: 'L1', specialite: 'mathematiques', matiere: 'Algèbre', taille: '1.9 MB' },
+            { id: 12, type: 'td', titre: 'TD Analyse - Suites et Séries', etablissement: 'FAST', niveau: 'L1', specialite: 'mathematiques', matiere: 'Analyse', taille: '0.6 MB' },
+            
+            // Cours - FAST - Physique
+            { id: 13, type: 'cours', titre: 'Mécanique du Point', etablissement: 'FAST', niveau: 'L1', specialite: 'physique', matiere: 'Mécanique', taille: '2.8 MB' },
+            { id: 14, type: 'cours', titre: 'Électrostatique', etablissement: 'FAST', niveau: 'L1', specialite: 'physique', matiere: 'Électricité', taille: '2.3 MB' },
+            { id: 15, type: 'tp', titre: 'TP Électromagnétisme', etablissement: 'FAST', niveau: 'L2', specialite: 'physique', matiere: 'Électricité', taille: '1.5 MB' },
+            
+            // Cours - FAST - Chimie
+            { id: 16, type: 'cours', titre: 'Chimie Générale', etablissement: 'FAST', niveau: 'L1', specialite: 'chimie', matiere: 'Chimie', taille: '3.1 MB' },
+            { id: 17, type: 'cours', titre: 'Chimie Organique I', etablissement: 'FAST', niveau: 'L2', specialite: 'chimie', matiere: 'Chimie Org', taille: '2.7 MB' },
+            { id: 18, type: 'tp', titre: 'TP Chimie Organique', etablissement: 'FAST', niveau: 'L2', specialite: 'chimie', matiere: 'Chimie Org', taille: '1.8 MB' },
+            
+            // ENS - Mathématiques
+            { id: 19, type: 'cours', titre: 'Didactique des Mathématiques', etablissement: 'ENS', niveau: 'L2', specialite: 'mathematiques', matiere: 'Didactique', taille: '1.5 MB' },
+            { id: 20, type: 'cours', titre: 'Analyse pour Enseignants', etablissement: 'ENS', niveau: 'L1', specialite: 'mathematiques', matiere: 'Analyse', taille: '2.0 MB' },
+            
+            // ENS - Physique
+            { id: 21, type: 'cours', titre: 'Physique pour Enseignants', etablissement: 'ENS', niveau: 'L1', specialite: 'physique', matiere: 'Physique', taille: '2.5 MB' },
+            { id: 22, type: 'tp', titre: 'TP Sciences Physiques', etablissement: 'ENS', niveau: 'L2', specialite: 'physique', matiere: 'TP', taille: '1.8 MB' },
+            
+            // ENS - Chimie
+            { id: 23, type: 'cours', titre: 'Chimie pour Enseignants', etablissement: 'ENS', niveau: 'L1', specialite: 'chimie', matiere: 'Chimie', taille: '2.3 MB' },
+            
+            // ENS - Biologie
+            { id: 24, type: 'cours', titre: 'Biologie pour Enseignants', etablissement: 'ENS', niveau: 'L1', specialite: 'biologie', matiere: 'Biologie', taille: '3.2 MB' },
+            { id: 25, type: 'cours', titre: 'Didactique des SVT', etablissement: 'ENS', niveau: 'L3', specialite: 'biologie', matiere: 'Didactique', taille: '1.8 MB' }
+        ];
+        
+        // Vérifier si l'utilisateur est connecté
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            
+            if (!currentUser) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            const user = JSON.parse(currentUser);
+            
+            // Afficher les informations de l'utilisateur
+            document.getElementById('user-name').textContent = user.nom || 'Étudiant';
+            document.getElementById('profile-etablissement').textContent = user.etablissement || '-';
+            document.getElementById('profile-niveau').textContent = user.niveau || '-';
+            document.getElementById('profile-specialite').textContent = user.specialite ? user.specialite.charAt(0).toUpperCase() + user.specialite.slice(1) : '-';
+            document.getElementById('filter-text').textContent = `${user.etablissement} - ${user.niveau} - ${user.specialite}`;
+            
+            // Filtrer et afficher les ressources
+            const filteredResources = ressourcesData.filter(r => 
+                r.etablissement === user.etablissement && 
+                r.niveau === user.niveau && 
+                r.specialite === user.specialite
+            );
+            
+            // Mettre à jour les statistiques
+            document.getElementById('stat-cours').textContent = filteredResources.filter(r => r.type === 'cours').length;
+            document.getElementById('stat-td').textContent = filteredResources.filter(r => r.type === 'td' || r.type === 'tp').length;
+            
+            // Afficher les ressources
+            renderResources(filteredResources);
+            
+            // Gestion de la déconnexion
+            document.getElementById('logout-btn').addEventListener('click', function() {
+                sessionStorage.removeItem('currentUser');
+                showNotification('Déconnexion réussie', 'success');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000);
+            });
+        });
+        
+        // Fonction pour afficher les ressources
+        function renderResources(resources) {
+            const resourcesGrid = document.getElementById('resources-grid');
+            const noResources = document.getElementById('no-resources');
+            
+            if (resources.length === 0) {
+                resourcesGrid.style.display = 'none';
+                noResources.style.display = 'block';
+                return;
+            }
+            
+            resourcesGrid.style.display = 'grid';
+            noResources.style.display = 'none';
+            
+            const typeIcons = {
+                'cours': 'fa-book',
+                'td': 'fa-edit',
+                'tp': 'fa-flask'
+            };
+            
+            const typeLabels = {
+                'cours': 'Cours',
+                'td': 'TD',
+                'tp': 'TP'
+            };
+            
+            resourcesGrid.innerHTML = resources.map(resource => `
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas ${typeIcons[resource.type]}"></i>
+                    </div>
+                    <h4 class="resource-title">${resource.titre}</h4>
+                    <div class="resource-meta">
+                        <span class="resource-meta-item">
+                            <i class="fas fa-tag"></i>
+                            ${typeLabels[resource.type]}
+                        </span>
+                        <span class="resource-meta-item">
+                            <i class="fas fa-book-open"></i>
+                            ${resource.matiere}
+                        </span>
+                        <span class="resource-meta-item">
+                            <i class="fas fa-file"></i>
+                            ${resource.taille}
+                        </span>
+                    </div>
+                    <button class="btn btn-primary btn-sm" style="width: 100%;" onclick="showNotification('Téléchargement de ${resource.titre}...', 'success')">
+                        <i class="fas fa-download"></i>
+                        Télécharger
+                    </button>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>

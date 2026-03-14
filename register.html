@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inscription étudiant - Campus Universitaire de Natitingou.">
+    <title>Inscription - FAST-NATI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="shortcut icon" href="images/favicon-32x32.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .register-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+            padding: var(--spacing-xl);
+            padding-top: 100px;
+        }
+        
+        .register-container {
+            width: 100%;
+            max-width: 550px;
+        }
+        
+        .register-card {
+            background: var(--white);
+            border-radius: var(--border-radius-xl);
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+        }
+        
+        .register-header {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-red-light));
+            padding: var(--spacing-xl);
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .register-header img {
+            height: 60px;
+            margin-bottom: var(--spacing-md);
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+        }
+        
+        .register-header h1 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .register-header p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        
+        .register-body {
+            padding: var(--spacing-xl);
+        }
+        
+        .register-form .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .register-form .form-label {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .register-form .form-label i {
+            color: var(--primary-red);
+            width: 20px;
+        }
+        
+        .input-wrapper {
+            position: relative;
+        }
+        
+        .input-wrapper .form-input {
+            padding-left: 2.5rem;
+        }
+        
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-400);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--border-radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: var(--white);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+        }
+        
+        .form-select:disabled {
+            background-color: var(--gray-100);
+            cursor: not-allowed;
+        }
+        
+        .register-form .btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            margin-top: var(--spacing-md);
+        }
+        
+        .register-footer {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--gray-200);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .register-footer p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .register-footer a {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+        
+        .register-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            background: #fee2e2;
+            border-left: 4px solid #ef4444;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-lg);
+            color: #991b1b;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .success-message {
+            background: #dcfce7;
+            border-left: 4px solid #22c55e;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-lg);
+            color: #166534;
+            display: none;
+        }
+        
+        .success-message.show {
+            display: block;
+        }
+        
+        .info-box {
+            background: #dbeafe;
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .info-box p {
+            color: #1e40af;
+            font-size: 0.9rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .btn-loading {
+            position: relative;
+            pointer-events: none;
+        }
+        
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top-color: var(--white);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        @keyframes spin {
+            to { transform: translateY(-50%) rotate(360deg); }
+        }
+        
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header simplifié -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-navbar.png" alt="FAST-NATI" class="logo-img">
+                <span class="logo-brand">FAST-NATI</span>
+            </a>
+            
+            <nav class="nav" style="margin-left: auto;">
+                <a href="banque-epreuves.html" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-arrow-left"></i>
+                    Retour
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="register-page">
+        <div class="register-container">
+            <div class="register-card">
+                <div class="register-header">
+                    <img src="images/logo-fast.jpg" alt="FAST-NATI Logo">
+                    <h1>Créer un compte</h1>
+                    <p>Campus Universitaire de Natitingou</p>
+                </div>
+                
+                <div class="register-body">
+                    <!-- Info -->
+                    <div class="info-box">
+                        <p><i class="fas fa-info-circle"></i> Remplissez le formulaire pour accéder aux ressources de votre spécialité.</p>
+                    </div>
+                    
+                    <!-- Messages -->
+                    <div class="error-message" id="error-message">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span id="error-text"></span>
+                    </div>
+                    
+                    <div class="success-message" id="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Compte créé avec succès ! Redirection...</span>
+                    </div>
+                    
+                    <!-- Formulaire d'inscription -->
+                    <form class="register-form" id="register-form">
+                        <!-- Nom complet -->
+                        <div class="form-group">
+                            <label for="nom" class="form-label">
+                                <i class="fas fa-user"></i>
+                                Nom complet
+                            </label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="nom" name="nom" class="form-input" placeholder="Votre nom et prénom" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i>
+                                Email étudiant
+                            </label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="prenom.nom@fast-nati.edu" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Mot de passe -->
+                        <div class="form-group">
+                            <label for="password" class="form-label">
+                                <i class="fas fa-lock"></i>
+                                Mot de passe
+                            </label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" id="password" name="password" class="form-input" placeholder="Minimum 6 caractères" required minlength="6">
+                            </div>
+                        </div>
+                        
+                        <!-- Établissement -->
+                        <div class="form-group">
+                            <label for="etablissement" class="form-label">
+                                <i class="fas fa-university"></i>
+                                Établissement
+                            </label>
+                            <select id="etablissement" name="etablissement" class="form-select" required>
+                                <option value="">Sélectionnez votre établissement</option>
+                                <option value="FAST">FAST - Faculté des Sciences et Techniques</option>
+                                <option value="ENS">ENS - École Normale Supérieure</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-row">
+                            <!-- Niveau -->
+                            <div class="form-group">
+                                <label for="niveau" class="form-label">
+                                    <i class="fas fa-graduation-cap"></i>
+                                    Niveau
+                                </label>
+                                <select id="niveau" name="niveau" class="form-select" required disabled>
+                                    <option value="">Choisir d'abord l'établissement</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Spécialité -->
+                            <div class="form-group">
+                                <label for="specialite" class="form-label">
+                                    <i class="fas fa-book"></i>
+                                    Spécialité
+                                </label>
+                                <select id="specialite" name="specialite" class="form-select" required>
+                                    <option value="">Sélectionnez</option>
+                                    <option value="mathematiques">Mathématiques</option>
+                                    <option value="informatique">Informatique</option>
+                                    <option value="physique">Physique</option>
+                                    <option value="chimie">Chimie</option>
+                                    <option value="biologie">Biologie</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" id="register-btn">
+                            <i class="fas fa-user-plus"></i>
+                            Créer mon compte
+                        </button>
+                    </form>
+                    
+                    <div class="register-footer">
+                        <p>Vous avez déjà un compte ?</p>
+                        <a href="login.html">Se connecter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const etablissementSelect = document.getElementById('etablissement');
+            const niveauSelect = document.getElementById('niveau');
+            const registerForm = document.getElementById('register-form');
+            const registerBtn = document.getElementById('register-btn');
+            const errorMessage = document.getElementById('error-message');
+            const errorText = document.getElementById('error-text');
+            const successMessage = document.getElementById('success-message');
+            
+            // Niveaux par établissement
+            const niveauxFAST = [
+                { value: 'L1', label: 'Licence 1' },
+                { value: 'L2', label: 'Licence 2' },
+                { value: 'L3', label: 'Licence 3' },
+                { value: 'M1', label: 'Master 1' },
+                { value: 'M2', label: 'Master 2' }
+            ];
+            
+            const niveauxENS = [
+                { value: 'L1', label: 'Licence 1' },
+                { value: 'L2', label: 'Licence 2' },
+                { value: 'L3', label: 'Licence 3 (BAPES)' },
+                { value: 'M1', label: 'Master 1' },
+                { value: 'M2', label: 'Master 2 (CAPES)' }
+            ];
+            
+            // Mise à jour des niveaux selon l'établissement
+            etablissementSelect.addEventListener('change', function() {
+                const etablissement = this.value;
+                niveauSelect.innerHTML = '<option value="">Sélectionnez votre niveau</option>';
+                
+                if (etablissement) {
+                    niveauSelect.disabled = false;
+                    const niveaux = etablissement === 'FAST' ? niveauxFAST : niveauxENS;
+                    
+                    niveaux.forEach(niveau => {
+                        const option = document.createElement('option');
+                        option.value = niveau.value;
+                        option.textContent = niveau.label;
+                        niveauSelect.appendChild(option);
+                    });
+                } else {
+                    niveauSelect.disabled = true;
+                    niveauSelect.innerHTML = '<option value="">Choisir d\'abord l\'établissement</option>';
+                }
+            });
+            
+            // Soumission du formulaire
+            registerForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const nom = document.getElementById('nom').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                const etablissement = etablissementSelect.value;
+                const niveau = niveauSelect.value;
+                const specialite = document.getElementById('specialite').value;
+                
+                // Validation
+                if (!nom || !email || !password || !etablissement || !niveau || !specialite) {
+                    errorText.textContent = 'Veuillez remplir tous les champs.';
+                    errorMessage.classList.add('show');
+                    return;
+                }
+                
+                if (password.length < 6) {
+                    errorText.textContent = 'Le mot de passe doit contenir au moins 6 caractères.';
+                    errorMessage.classList.add('show');
+                    return;
+                }
+                
+                // Vérifier si l'email existe déjà
+                const existingUsers = JSON.parse(localStorage.getItem('FAST_USERS') || '[]');
+                if (existingUsers.some(u => u.email === email)) {
+                    errorText.textContent = 'Cet email est déjà utilisé.';
+                    errorMessage.classList.add('show');
+                    return;
+                }
+                
+                // Animation de chargement
+                registerBtn.classList.add('btn-loading');
+                registerBtn.disabled = true;
+                
+                // Créer le nouvel utilisateur
+                const newUser = {
+                    id: Date.now(),
+                    nom,
+                    email,
+                    password,
+                    etablissement,
+                    niveau,
+                    specialite,
+                    dateInscription: new Date().toISOString()
+                };
+                
+                // Sauvegarder dans localStorage
+                existingUsers.push(newUser);
+                localStorage.setItem('FAST_USERS', JSON.stringify(existingUsers));
+                
+                // Afficher le message de succès
+                errorMessage.classList.remove('show');
+                successMessage.classList.add('show');
+                
+                // Rediriger vers la connexion après 2 secondes
+                setTimeout(() => {
+                    window.location.href = 'login.html?registered=true';
+                }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

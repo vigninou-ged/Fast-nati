@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Découvrez les établissements du Campus Universitaire de Natitingou : FAST et ENS.">
-    <title>Départements - FAST-NATI</title>
+    <meta name="description" content="Banque d'épreuves du Campus Universitaire de Natitingou - FAST et ENS.">
+    <title>Banque d'épreuves - FAST-NATI</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Styles spécifiques -->
+    <!-- Styles spécifiques pour la banque d'épreuves -->
     <style>
         .etablissement-section {
             margin-bottom: var(--spacing-3xl);
@@ -37,9 +37,13 @@
             border-bottom: 3px solid var(--primary-red);
         }
         
+        .etablissement-header.ens {
+            border-bottom-color: #2E86AB;
+        }
+        
         .etablissement-logo {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background: linear-gradient(135deg, var(--primary-red), var(--primary-red-light));
             border-radius: var(--border-radius-lg);
             display: flex;
@@ -48,18 +52,22 @@
             color: var(--white);
             font-family: var(--font-heading);
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+        }
+        
+        .etablissement-logo.ens {
+            background: linear-gradient(135deg, #2E86AB, #1a5276);
         }
         
         .etablissement-info h2 {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             color: var(--gray-800);
             margin-bottom: var(--spacing-xs);
         }
         
         .etablissement-info p {
             color: var(--gray-500);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
         
         .specialites-grid {
@@ -78,9 +86,13 @@
         }
         
         .specialite-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-xl);
             border-color: var(--primary-red);
+        }
+        
+        .specialite-card.ens:hover {
+            border-color: #2E86AB;
         }
         
         .specialite-card-header {
@@ -88,6 +100,10 @@
             padding: var(--spacing-xl);
             text-align: center;
             color: var(--white);
+        }
+        
+        .specialite-card-header.ens {
+            background: linear-gradient(135deg, #2E86AB, #1a5276);
         }
         
         .specialite-card-icon {
@@ -118,6 +134,7 @@
             color: var(--gray-600);
             margin-bottom: var(--spacing-lg);
             line-height: 1.6;
+            min-height: 80px;
         }
         
         .specialite-card-stats {
@@ -139,6 +156,10 @@
             color: var(--primary-red);
         }
         
+        .specialite-card.ens .specialite-stat-number {
+            color: #2E86AB;
+        }
+        
         .specialite-stat-label {
             font-size: 0.75rem;
             color: var(--gray-500);
@@ -149,7 +170,16 @@
             width: 100%;
         }
         
-        .campus-info {
+        .specialite-card .btn.ens {
+            background: linear-gradient(135deg, #2E86AB, #1a5276);
+        }
+        
+        .specialite-card .btn.ens:hover {
+            background: linear-gradient(135deg, #1a5276, #2E86AB);
+        }
+        
+        /* Info section */
+        .info-section {
             background: linear-gradient(135deg, #fef3c7, #fde68a);
             border-radius: var(--border-radius-lg);
             padding: var(--spacing-xl);
@@ -157,7 +187,7 @@
             border-left: 4px solid var(--accent-gold);
         }
         
-        .campus-info h3 {
+        .info-section h3 {
             color: #92400e;
             margin-bottom: var(--spacing-sm);
             display: flex;
@@ -165,7 +195,7 @@
             gap: var(--spacing-sm);
         }
         
-        .campus-info p {
+        .info-section p {
             color: #92400e;
             margin: 0;
         }
@@ -204,10 +234,10 @@
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Accueil</a></li>
                     <li><a href="faculte.html" class="nav-link">La Faculté</a></li>
-                    <li><a href="departements.html" class="nav-link active">Départements</a></li>
+                    <li><a href="departements.html" class="nav-link">Départements</a></li>
                     <li><a href="formations.html" class="nav-link">Formations</a></li>
                     <li><a href="ressources.html" class="nav-link">Ressources</a></li>
-                    <li><a href="banque-epreuves.html" class="nav-link">Banque d'épreuves</a></li>
+                    <li><a href="banque-epreuves.html" class="nav-link active">Banque d'épreuves</a></li>
                     <li><a href="etudiants.html" class="nav-link">Espace Étudiants</a></li>
                     <li><a href="actualites.html" class="nav-link">Actualités</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
@@ -225,17 +255,17 @@
         <!-- Page Header -->
         <section class="page-header">
             <div class="container">
-                <h1>Campus Universitaire de Natitingou</h1>
-                <p>Découvrez nos deux établissements d'excellence</p>
+                <h1>Banque d'épreuves</h1>
+                <p>Campus Universitaire de Natitingou - FAST & ENS</p>
             </div>
         </section>
         
-        <!-- Info Campus -->
+        <!-- Section Info -->
         <section class="section" style="padding-bottom: 0;">
             <div class="container">
-                <div class="campus-info">
-                    <h3><i class="fas fa-university"></i> Campus Universitaire de Natitingou</h3>
-                    <p>Le Campus Universitaire de Natitingou regroupe deux établissements d'enseignement supérieur : la Faculté des Sciences et Techniques (FAST) et l'École Normale Supérieure (ENS). Toutes deux sont dédiées aux disciplines scientifiques et forment les futurs enseignants et chercheurs.</p>
+                <div class="info-section">
+                    <h3><i class="fas fa-info-circle"></i> Accès réservé aux étudiants</h3>
+                    <p>Pour consulter et télécharger les épreuves, vous devez être connecté avec votre compte étudiant. Sélectionnez votre établissement et votre spécialité ci-dessous.</p>
                 </div>
             </div>
         </section>
@@ -247,7 +277,7 @@
                     <div class="etablissement-logo">FAST</div>
                     <div class="etablissement-info">
                         <h2>Faculté des Sciences et Techniques de Natitingou</h2>
-                        <p>Formation universitaire en sciences et techniques</p>
+                        <p>Choisissez votre spécialité pour accéder aux épreuves</p>
                     </div>
                 </div>
                 
@@ -263,7 +293,7 @@
                         </div>
                         <div class="specialite-card-body">
                             <p class="specialite-card-text">
-                                Formation complète en mathématiques fondamentales et informatique : programmation, algorithmes, bases de données et analyse mathématique.
+                                Épreuves de mathématiques fondamentales, analyse, algèbre, programmation et informatique.
                             </p>
                             <div class="specialite-card-stats">
                                 <div class="specialite-stat">
@@ -293,7 +323,7 @@
                         </div>
                         <div class="specialite-card-body">
                             <p class="specialite-card-text">
-                                Étude approfondie de la physique fondamentale et appliquée : mécanique, électromagnétisme, thermodynamique et physique quantique.
+                                Épreuves de mécanique, électromagnétisme, thermodynamique, optique et physique quantique.
                             </p>
                             <div class="specialite-card-stats">
                                 <div class="specialite-stat">
@@ -323,7 +353,7 @@
                         </div>
                         <div class="specialite-card-body">
                             <p class="specialite-card-text">
-                                Formation en chimie organique, inorganique, analytique et physique avec des travaux pratiques en laboratoire moderne.
+                                Épreuves de chimie organique, inorganique, analytique, physique et chimie des matériaux.
                             </p>
                             <div class="specialite-card-stats">
                                 <div class="specialite-stat">
@@ -348,18 +378,18 @@
         <!-- Section ENS -->
         <section class="section etablissement-section" style="background: var(--gray-50);">
             <div class="container">
-                <div class="etablissement-header">
-                    <div class="etablissement-logo" style="background: linear-gradient(135deg, #2E86AB, #1a5276);">ENS</div>
+                <div class="etablissement-header ens">
+                    <div class="etablissement-logo ens">ENS</div>
                     <div class="etablissement-info">
                         <h2>École Normale Supérieure de Natitingou</h2>
-                        <p>Formation des enseignants en sciences</p>
+                        <p>Choisissez votre spécialité pour accéder aux épreuves</p>
                     </div>
                 </div>
                 
                 <div class="specialites-grid">
                     <!-- Mathématiques – Informatique ENS -->
-                    <div class="specialite-card">
-                        <div class="specialite-card-header" style="background: linear-gradient(135deg, #2E86AB, #1a5276);">
+                    <div class="specialite-card ens">
+                        <div class="specialite-card-header ens">
                             <div class="specialite-card-icon">
                                 <i class="fas fa-laptop-code"></i>
                             </div>
@@ -368,7 +398,7 @@
                         </div>
                         <div class="specialite-card-body">
                             <p class="specialite-card-text">
-                                Formation des professeurs de mathématiques et informatique : pédagogie, didactique et approfondissement disciplinaire.
+                                Épreuves de formation pédagogique en mathématiques et informatique pour futurs enseignants.
                             </p>
                             <div class="specialite-card-stats">
                                 <div class="specialite-stat">
@@ -380,7 +410,7 @@
                                     <div class="specialite-stat-label">Années</div>
                                 </div>
                             </div>
-                            <a href="login.html?specialite=ens-math-info" class="btn btn-primary" data-specialite="ens-math-info" style="background: linear-gradient(135deg, #2E86AB, #1a5276);">
+                            <a href="login.html?specialite=ens-math-info" class="btn btn-primary ens" data-specialite="ens-math-info">
                                 <i class="fas fa-eye"></i>
                                 Voir les épreuves
                             </a>
@@ -388,8 +418,8 @@
                     </div>
                     
                     <!-- Physique ENS -->
-                    <div class="specialite-card">
-                        <div class="specialite-card-header" style="background: linear-gradient(135deg, #2E86AB, #1a5276);">
+                    <div class="specialite-card ens">
+                        <div class="specialite-card-header ens">
                             <div class="specialite-card-icon">
                                 <i class="fas fa-atom"></i>
                             </div>
@@ -398,7 +428,7 @@
                         </div>
                         <div class="specialite-card-body">
                             <p class="specialite-card-text">
-                                Formation des professeurs de physique : sciences physiques, expérimentation et méthodologie d'enseignement.
+                                Épreuves de formation pédagogique en physique pour futurs enseignants de sciences physiques.
                             </p>
                             <div class="specialite-card-stats">
                                 <div class="specialite-stat">
@@ -410,7 +440,7 @@
                                     <div class="specialite-stat-label">Années</div>
                                 </div>
                             </div>
-                            <a href="login.html?specialite=ens-physique" class="btn btn-primary" data-specialite="ens-physique" style="background: linear-gradient(135deg, #2E86AB, #1a5276);">
+                            <a href="login.html?specialite=ens-physique" class="btn btn-primary ens" data-specialite="ens-physique">
                                 <i class="fas fa-eye"></i>
                                 Voir les épreuves
                             </a>
@@ -418,8 +448,8 @@
                     </div>
                     
                     <!-- Chimie ENS -->
-                    <div class="specialite-card">
-                        <div class="specialite-card-header" style="background: linear-gradient(135deg, #2E86AB, #1a5276);">
+                    <div class="specialite-card ens">
+                        <div class="specialite-card-header ens">
                             <div class="specialite-card-icon">
                                 <i class="fas fa-flask"></i>
                             </div>
@@ -428,7 +458,7 @@
                         </div>
                         <div class="specialite-card-body">
                             <p class="specialite-card-text">
-                                Formation des professeurs de chimie : chimie générale, organique et pédagogie des sciences expérimentales.
+                                Épreuves de formation pédagogique en chimie pour futurs enseignants de sciences chimiques.
                             </p>
                             <div class="specialite-card-stats">
                                 <div class="specialite-stat">
@@ -440,7 +470,7 @@
                                     <div class="specialite-stat-label">Années</div>
                                 </div>
                             </div>
-                            <a href="login.html?specialite=ens-chimie" class="btn btn-primary" data-specialite="ens-chimie" style="background: linear-gradient(135deg, #2E86AB, #1a5276);">
+                            <a href="login.html?specialite=ens-chimie" class="btn btn-primary ens" data-specialite="ens-chimie">
                                 <i class="fas fa-eye"></i>
                                 Voir les épreuves
                             </a>
@@ -448,8 +478,8 @@
                     </div>
                     
                     <!-- Biologie ENS -->
-                    <div class="specialite-card">
-                        <div class="specialite-card-header" style="background: linear-gradient(135deg, #2E86AB, #1a5276);">
+                    <div class="specialite-card ens">
+                        <div class="specialite-card-header ens">
                             <div class="specialite-card-icon">
                                 <i class="fas fa-dna"></i>
                             </div>
@@ -458,7 +488,7 @@
                         </div>
                         <div class="specialite-card-body">
                             <p class="specialite-card-text">
-                                Formation des professeurs de biologie : sciences de la vie, écologie et approches pédagogiques pour l'enseignement des SVT.
+                                Épreuves de formation pédagogique en biologie pour futurs enseignants de SVT.
                             </p>
                             <div class="specialite-card-stats">
                                 <div class="specialite-stat">
@@ -470,7 +500,7 @@
                                     <div class="specialite-stat-label">Années</div>
                                 </div>
                             </div>
-                            <a href="login.html?specialite=ens-biologie" class="btn btn-primary" data-specialite="ens-biologie" style="background: linear-gradient(135deg, #2E86AB, #1a5276);">
+                            <a href="login.html?specialite=ens-biologie" class="btn btn-primary ens" data-specialite="ens-biologie">
                                 <i class="fas fa-eye"></i>
                                 Voir les épreuves
                             </a>
@@ -538,7 +568,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p class="footer-footer-copyright">
+                <p class="footer-copyright">
                     &copy; 2024 Campus Universitaire de Natitingou - FAST & ENS. Tous droits réservés.
                 </p>
                 <div class="footer-social">
@@ -561,5 +591,28 @@
     
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gestion des boutons "Voir les épreuves"
+            const buttons = document.querySelectorAll('.specialite-card .btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const specialite = this.getAttribute('data-specialite');
+                    
+                    // Stocker la spécialité sélectionnée
+                    sessionStorage.setItem('selectedSpecialite', specialite);
+                    
+                    // Vérifier si l'utilisateur est connecté
+                    if (isUserLoggedIn()) {
+                        // Rediriger vers les épreuves
+                        e.preventDefault();
+                        window.location.href = 'epreuves.html';
+                    }
+                    // Sinon, laisser le lien href fonctionner normalement vers login.html
+                });
+            });
+        });
+    </script>
 </body>
 </html>
