@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez les 5 départements de la Faculté des Sciences et Techniques de Natitingou : Mathématiques, Informatique, Physique, Chimie et Biologie.">
+    <title>Départements - FAST-NATI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="shortcut icon" href="images/favicon-32x32.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-navbar.png" alt="FAST-NATI" class="logo-img">
+                <span class="logo-brand">FAST-NATI</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="faculte.html" class="nav-link">La Faculté</a></li>
+                    <li><a href="departements.html" class="nav-link active">Départements</a></li>
+                    <li><a href="formations.html" class="nav-link">Formations</a></li>
+                    <li><a href="ressources.html" class="nav-link">Ressources</a></li>
+                    <li><a href="etudiants.html" class="nav-link">Espace Étudiants</a></li>
+                    <li><a href="actualites.html" class="nav-link">Actualités</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="index.html#quick-access" class="btn-quick-access">
+                    <i class="fas fa-bolt"></i>
+                    Accès rapide
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Nos Départements</h1>
+                <p>Cinq départements d'excellence scientifique</p>
+            </div>
+        </section>
+        
+        <!-- Section Départements -->
+        <section class="section">
+            <div class="container">
+                <div class="departments-grid">
+                    <!-- Département Mathématiques -->
+                    <div class="department-card">
+                        <div class="department-card-header">
+                            <div class="department-card-icon">
+                                <i class="fas fa-square-root-alt"></i>
+                            </div>
+                            <h3 class="department-card-title">Mathématiques</h3>
+                            <p class="department-card-subtitle">Département de Mathématiques</p>
+                        </div>
+                        <div class="department-card-body">
+                            <p class="department-card-text">
+                                Le département de Mathématiques offre une formation rigoureuse en mathématiques fondamentales et appliquées. Nos programmes couvrent l'algèbre, l'analyse, la géométrie, les probabilités et la statistique.
+                            </p>
+                            <h4 style="font-size: 1rem; margin: var(--spacing-md) 0 var(--spacing-sm); color: var(--gray-800);">Spécialités :</h4>
+                            <ul style="color: var(--gray-600); margin-bottom: var(--spacing-lg); padding-left: var(--spacing-lg);">
+                                <li>Algèbre et Géométrie</li>
+                                <li>Analyse Mathématique</li>
+                                <li>Probabilités et Statistiques</li>
+                                <li>Mathématiques Appliquées</li>
+                            </ul>
+                            <div class="department-card-stats">
+                                <div class="department-stat">
+                                    <div class="department-stat-number">15</div>
+                                    <div class="department-stat-label">Enseignants</div>
+                                </div>
+                                <div class="department-stat">
+                                    <div class="department-stat-number">800</div>
+                                    <div class="department-stat-label">Étudiants</div>
+                                </div>
+                                <div class="department-stat">
+                                    <div class="department-stat-number">3</div>
+                                    <div class="department-stat-label">Laboratoires</div>
+                                </div>
+                            </div>
+                            <a href="formations.html" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-lg);">
+                                <i class="fas fa-arrow-right"></i>
+                                Voir les formations
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Département Informatique -->
+                    <div class="department-card">
+                        <div class="department-card-header">
+                            <div class="department-card-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="department-card-title">Informatique</h3>
+                            <p class="department-card-subtitle">Département d'Informatique</p>
+                        </div>
+                        <div class="department-card-body">
+                            <p class="department-card-text">
+                                Le département d'Informatique forme les experts en technologies de l'information. Nos programmes couvrent le développement logiciel, l'intelligence artificielle, la cybersécurité et les réseaux.
+                            </p>
+                            <h4 style="font-size: 1rem; margin: var(--spacing-md) 0 var(--spacing-sm); color: var(--gray-800);">Spécialités :</h4>
+                            <ul style="color: var(--gray-600); margin-bottom: var(--spacing-lg); padding-left: var(--spacing-lg);">
+                                <li>Génie Logiciel</li>
+                                <li>Intelligence Artificielle</li>
+                                <li>Cybersécurité</li>
+                                <li>Réseaux et Systèmes</li>
+                            </ul>
+                            <div class="department-card-stats">
+                                <div class="department-stat">
+                                    <div class="department-stat-number">25</div>
+                                    <div class="department-stat-label">Enseignants</div>
+                                </div>
+                                <div class="department-stat">
+                                    <div class="department-stat-number">1200</div>
+                                    <div class="department-stat-label">Étudiants</div>
+                                </div>
+                                <div class="department-stat">
+                                    <div class="department-stat-number">5</div>
+                                    <div class="department-stat-label">Laboratoires</div>
+                                </div>
+                            </div>
+                            <a href="formations.html" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-lg);">
+                                <i class="fas fa-arrow-right"></i>
+                                Voir les formations
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Département Physique -->
+                    <div class="department-card">
+                        <div class="department-card-header">
+                            <div class="department-card-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <h3 class="department-card-title">Physique</h3>
+                            <p class="department-card-subtitle">Département de Physique</p>
+                        </div>
+                        <div class="department-card-body">
+                            <p class="department-card-text">
+                                Le département de Physique propose une formation approfondie en physique fondamentale et appliquée. Nos laboratoires équipés permettent des expériences pratiques en mécanique, électromagnétisme et physique quantique.
+                            </p>
+                            <h4 style="font-size: 1rem; margin: var(--spacing-md) 0 var(--spacing-sm); color: var(--gray-800);">Spécialités :</h4>
+                            <ul style="color: var(--gray-600); margin-bottom: var(--spacing-lg); padding-left: var(--spacing-lg);">
+                                <li>Physique Fondamentale</li>
+                                <li>Physique des Matériaux</li>
+                                <li>Énergie Renouvelable</li>
+                                <li>Électronique</li>
+                            </ul>
+                            <div class="department-card-stats">
+                                <div class="department-stat">
+                                    <div class="department-stat-number">18</div>
+                                    <div class="department-stat-label">Enseignants</div>
+                                </div>
+                                <div class="department-stat">
+                                    <div class="department-stat-number">600</div>
+                                    <div class="department-stat-label">Étudiants</div>
+                                </div>
+                                <div class="department-stat">
+                                    <div class="department-stat-number">4</div>
+                                    <div class="department-stat-label">Laboratoires</div>
+                                </div>
+                            </div>
+                            <a href="formations.html" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-lg);">
+                                <i class="fas fa-arrow-right"></i>
+                                Voir les formations
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Département Chimie -->
+                    <div class="department-card">
+                        <div class="department-card-header">
+                            <div class="department-card-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h3 class="department-card-title">Chimie</h3>
+                            <p class="department-card-subtitle">Département de Chimie</p>
+                        </div>
+                        <div class="department-card-body">
+                            <p class="department-card-text">
+                                Le département de Chimie offre une formation complète couvrant la chimie organique, inorganique, analytique et physique. Nos laboratoires modernes permettent des travaux pratiques de haut niveau.
+                            </p>
+                            <h4 style="font-size: 1rem; margin: var(--spacing-md) 0 var(--spacing-sm); color: var(--gray-800);">Spécialités :</h4>
+                            <ul style="color: var(--gray-600); margin-bottom: var(--spacing-lg); padding-left: var(--spacing-lg);">
+                                <li>Chimie Organique</li>
+                                <li>Chimie Analytique</li>
+                                <li>Chimie des Matériaux</li>
+                                <li>Chimie Environnementale</li>
+                            </ul>
+                            <div class="department-card-stats">
+                                <div class="department-stat">
+                                    <div class="department-stat-number">20</div>
+                                    <div class="department-stat-label">Enseignants</div>
+                                </div>
+                                <div class="department-stat">
+                                    <div class="department-stat-number">700</div>
+                                    <div class="department-stat-label">Étudiants</div>
+                                </div>
+                                <div class="department-stat">
+                                    <div class="department-stat-number">4</div>
+                                    <div class="department-stat-label">Laboratoires</div>
+                                </div>
+                            </div>
+                            <a href="formations.html" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-lg);">
+                                <i class="fas fa-arrow-right"></i>
+                                Voir les formations
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Département Biologie -->
+                    <div class="department-card">
+                        <div class="department-card-header">
+                            <div class="department-card-icon">
+                                <i class="fas fa-dna"></i>
+                            </div>
+                            <h3 class="department-card-title">Biologie</h3>
+                            <p class="department-card-subtitle">Département de Biologie</p>
+                        </div>
+                        <div class="department-card-body">
+                            <p class="department-card-text">
+                                Le département de Biologie explore les sciences de la vie dans toute leur diversité. De la biologie moléculaire à l'écologie, nos programmes offrent une compréhension complète des systèmes vivants.
+                            </p>
+                            <h4 style="font-size: 1rem; margin: var(--spacing-md) 0 var(--spacing-sm); color: var(--gray-800);">Spécialités :</h4>
+                            <ul style="color: var(--gray-600); margin-bottom: var(--spacing-lg); padding-left: var(--spacing-lg);">
+                                <li>Biologie Moléculaire</li>
+                                <li>Microbiologie</li>
+                                <li>Écologie</li>
+                                <li>Biotechnologies</li>
+                            </ul>
+                            <div class="department-card-stats">
+                                <div class="department-stat">
+                                    <div class="department-stat-number">22</div>
+                                    <div class="department-stat-label">Enseignants</div>
+                                </div>
+                                <div class="department-stat">
+                                    <div class="department-stat-number">900</div>
+                                    <div class="department-stat-label">Étudiants</div>
+                                </div>
+                                <div class="department-stat">
+                                    <div class="department-stat-number">5</div>
+                                    <div class="department-stat-label">Laboratoires</div>
+                                </div>
+                            </div>
+                            <a href="formations.html" class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-lg);">
+                                <i class="fas fa-arrow-right"></i>
+                                Voir les formations
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Contact Départements -->
+        <section class="section" style="background: var(--gray-50);">
+            <div class="container">
+                <h2 class="section-title">Contact des Départements</h2>
+                <p class="section-subtitle">Pour plus d'informations sur nos départements</p>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                <i class="fas fa-envelope" style="color: var(--primary-blue);"></i>
+                                Contacts par département
+                            </h3>
+                            <ul style="color: var(--gray-600); line-height: 2;">
+                                <li><strong>Mathématiques :</strong> math@fast-univ.edu</li>
+                                <li><strong>Informatique :</strong> info@fast-univ.edu</li>
+                                <li><strong>Physique :</strong> phys@fast-univ.edu</li>
+                                <li><strong>Chimie :</strong> chimie@fast-univ.edu</li>
+                                <li><strong>Biologie :</strong> bio@fast-univ.edu</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                <i class="fas fa-clock" style="color: var(--primary-blue);"></i>
+                                Heures de bureau
+                            </h3>
+                            <p style="color: var(--gray-600); margin-bottom: var(--spacing-md);">
+                                Les secrétariats des départements sont ouverts :
+                            </p>
+                            <ul style="color: var(--gray-600); line-height: 2;">
+                                <li><strong>Lundi - Jeudi :</strong> 8h30 - 16h30</li>
+                                <li><strong>Vendredi :</strong> 8h30 - 12h00</li>
+                                <li><strong>Samedi - Dimanche :</strong> Fermé</li>
+                            </ul>
+                            <a href="contact.html" class="btn btn-primary" style="margin-top: var(--spacing-md);">
+                                <i class="fas fa-arrow-right"></i>
+                                Contactez-nous
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-navbar.png" alt="FAST Natitingou" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            FAST
+                            <span>Faculté des Sciences et Techniques de Natitingou</span>
+                        </div>
+                    </div>
+                    <p class="footer-text">
+                        La Faculté des Sciences et Techniques de Natitingou s\'engage pour l\'excellence académique, la recherche innovante et la formation des leaders de demain.
+                    </p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Accueil</a></li>
+                        <li><a href="formations.html" class="footer-link">Formations</a></li>
+                        <li><a href="ressources.html" class="footer-link">Ressources</a></li>
+                        <li><a href="actualites.html" class="footer-link">Actualités</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3 class="footer-title">Liens utiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="departements.html" class="footer-link">Départements</a></li>
+                        <li><a href="etudiants.html" class="footer-link">Espace étudiants</a></li>
+                        <li><a href="ressources.html" class="footer-link">Documents</a></li>
+                        <li><a href="actualites.html" class="footer-link">Calendrier</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Avenue des Sciences<br>10000 Ville Universitaire</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@fast-univ.edu</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+212 5 00 00 00 00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2024 FAST - Faculté des Sciences et Techniques de Natitingou. Tous droits réservés.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

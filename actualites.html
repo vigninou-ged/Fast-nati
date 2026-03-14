@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Actualités de la Faculté des Sciences et Techniques de Natitingou : conférences, séminaires, annonces et événements.">
+    <title>Actualités - FAST-NATI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="shortcut icon" href="images/favicon-32x32.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-navbar.png" alt="FAST-NATI" class="logo-img">
+                <span class="logo-brand">FAST-NATI</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="faculte.html" class="nav-link">La Faculté</a></li>
+                    <li><a href="departements.html" class="nav-link">Départements</a></li>
+                    <li><a href="formations.html" class="nav-link">Formations</a></li>
+                    <li><a href="ressources.html" class="nav-link">Ressources</a></li>
+                    <li><a href="etudiants.html" class="nav-link">Espace Étudiants</a></li>
+                    <li><a href="actualites.html" class="nav-link active">Actualités</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="index.html#quick-access" class="btn-quick-access">
+                    <i class="fas fa-bolt"></i>
+                    Accès rapide
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Actualités</h1>
+                <p>Restez informé de l'actualité de la faculté</p>
+            </div>
+        </section>
+        
+        <!-- Section Actualités -->
+        <section class="section">
+            <div class="container">
+                <!-- Filtres par catégorie -->
+                <div class="resources-filter">
+                    <button class="filter-btn active" data-filter="all">Toutes</button>
+                    <button class="filter-btn" data-filter="actualite">Actualités</button>
+                    <button class="filter-btn" data-filter="conference">Conférences</button>
+                    <button class="filter-btn" data-filter="seminaire">Séminaires</button>
+                    <button class="filter-btn" data-filter="annonce">Annonces</button>
+                </div>
+                
+                <!-- Grille d'actualités -->
+                <div class="news-grid">
+                    <!-- Actualité 1 -->
+                    <article class="news-card" data-category="conference">
+                        <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=400&h=250&fit=crop" alt="Conférence IA" class="news-card-image">
+                        <div class="news-card-body">
+                            <div class="news-card-meta">
+                                <span class="news-card-date">
+                                    <i class="fas fa-calendar"></i>
+                                    15 Mars 2024
+                                </span>
+                                <span class="news-card-category">Conférence</span>
+                            </div>
+                            <h3 class="news-card-title">Conférence internationale sur l'intelligence artificielle</h3>
+                            <p class="news-card-text">
+                                La FAST organise une conférence internationale sur les avancées en intelligence artificielle et machine learning. Des chercheurs du monde entier seront présents pour partager leurs travaux.
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Article complet bientôt disponible', 'info')">
+                                <i class="fas fa-arrow-right"></i>
+                                Lire la suite
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Actualité 2 -->
+                    <article class="news-card" data-category="actualite">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=250&fit=crop" alt="Remise des diplômes" class="news-card-image">
+                        <div class="news-card-body">
+                            <div class="news-card-meta">
+                                <span class="news-card-date">
+                                    <i class="fas fa-calendar"></i>
+                                    10 Mars 2024
+                                </span>
+                                <span class="news-card-category">Événement</span>
+                            </div>
+                            <h3 class="news-card-title">Cérémonie de remise des diplômes 2024</h3>
+                            <p class="news-card-text">
+                                Célébration de la remise des diplômes pour la promotion 2023-2024. Une cérémonie grandiose a réuni les diplômés, leurs familles et le corps professoral.
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Article complet bientôt disponible', 'info')">
+                                <i class="fas fa-arrow-right"></i>
+                                Lire la suite
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Actualité 3 -->
+                    <article class="news-card" data-category="actualite">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=250&fit=crop" alt="Laboratoire biotechnologie" class="news-card-image">
+                        <div class="news-card-body">
+                            <div class="news-card-meta">
+                                <span class="news-card-date">
+                                    <i class="fas fa-calendar"></i>
+                                    5 Mars 2024
+                                </span>
+                                <span class="news-card-category">Recherche</span>
+                            </div>
+                            <h3 class="news-card-title">Nouveau laboratoire de recherche en biotechnologie</h3>
+                            <p class="news-card-text">
+                                Inauguration du nouveau laboratoire de recherche dédié aux biotechnologies et sciences de la vie. Un investissement de 2 millions d'euros pour l'excellence scientifique.
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Article complet bientôt disponible', 'info')">
+                                <i class="fas fa-arrow-right"></i>
+                                Lire la suite
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Actualité 4 -->
+                    <article class="news-card" data-category="seminaire">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=250&fit=crop" alt="Séminaire recherche" class="news-card-image">
+                        <div class="news-card-body">
+                            <div class="news-card-meta">
+                                <span class="news-card-date">
+                                    <i class="fas fa-calendar"></i>
+                                    28 Février 2024
+                                </span>
+                                <span class="news-card-category">Séminaire</span>
+                            </div>
+                            <h3 class="news-card-title">Séminaire sur les énergies renouvelables</h3>
+                            <p class="news-card-text">
+                                Le département de Physique organise un séminaire sur les dernières avancées en matière d'énergies renouvelables et de stockage d'énergie.
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Article complet bientôt disponible', 'info')">
+                                <i class="fas fa-arrow-right"></i>
+                                Lire la suite
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Actualité 5 -->
+                    <article class="news-card" data-category="annonce">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop" alt="Appel à candidatures" class="news-card-image">
+                        <div class="news-card-body">
+                            <div class="news-card-meta">
+                                <span class="news-card-date">
+                                    <i class="fas fa-calendar"></i>
+                                    25 Février 2024
+                                </span>
+                                <span class="news-card-category">Annonce</span>
+                            </div>
+                            <h3 class="news-card-title">Appel à candidatures pour les bourses d'excellence</h3>
+                            <p class="news-card-text">
+                                La FAST lance son appel à candidatures pour les bourses d'excellence 2024. Les étudiants méritants peuvent postuler jusqu'au 30 avril 2024.
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Article complet bientôt disponible', 'info')">
+                                <i class="fas fa-arrow-right"></i>
+                                Lire la suite
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Actualité 6 -->
+                    <article class="news-card" data-category="conference">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=400&h=250&fit=crop" alt="Conférence cybersécurité" class="news-card-image">
+                        <div class="news-card-body">
+                            <div class="news-card-meta">
+                                <span class="news-card-date">
+                                    <i class="fas fa-calendar"></i>
+                                    20 Février 2024
+                                </span>
+                                <span class="news-card-category">Conférence</span>
+                            </div>
+                            <h3 class="news-card-title">Workshop sur la cybersécurité</h3>
+                            <p class="news-card-text">
+                                Le département d'Informatique organise un workshop sur la cybersécurité avec des experts de l'industrie. Ateliers pratiques et conférences au programme.
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Article complet bientôt disponible', 'info')">
+                                <i class="fas fa-arrow-right"></i>
+                                Lire la suite
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Actualité 7 -->
+                    <article class="news-card" data-category="actualite">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=250&fit=crop" alt="Partenariat universitaire" class="news-card-image">
+                        <div class="news-card-body">
+                            <div class="news-card-meta">
+                                <span class="news-card-date">
+                                    <i class="fas fa-calendar"></i>
+                                    15 Février 2024
+                                </span>
+                                <span class="news-card-category">Partenariat</span>
+                            </div>
+                            <h3 class="news-card-title">Nouveau partenariat avec l'Université de Paris</h3>
+                            <p class="news-card-text">
+                                La FAST signe un accord de partenariat avec l'Université de Paris pour des échanges d'étudiants et de chercheurs, ainsi que des projets collaboratifs.
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Article complet bientôt disponible', 'info')">
+                                <i class="fas fa-arrow-right"></i>
+                                Lire la suite
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Actualité 8 -->
+                    <article class="news-card" data-category="seminaire">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=250&fit=crop" alt="Séminaire mathématiques" class="news-card-image">
+                        <div class="news-card-body">
+                            <div class="news-card-meta">
+                                <span class="news-card-date">
+                                    <i class="fas fa-calendar"></i>
+                                    10 Février 2024
+                                </span>
+                                <span class="news-card-category">Séminaire</span>
+                            </div>
+                            <h3 class="news-card-title">Séminaire de mathématiques appliquées</h3>
+                            <p class="news-card-text">
+                                Le département de Mathématiques organise son séminaire mensuel sur les mathématiques appliquées avec la participation de chercheurs internationaux.
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Article complet bientôt disponible', 'info')">
+                                <i class="fas fa-arrow-right"></i>
+                                Lire la suite
+                            </a>
+                        </div>
+                    </article>
+                    
+                    <!-- Actualité 9 -->
+                    <article class="news-card" data-category="annonce">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=250&fit=crop" alt="Rentrée universitaire" class="news-card-image">
+                        <div class="news-card-body">
+                            <div class="news-card-meta">
+                                <span class="news-card-date">
+                                    <i class="fas fa-calendar"></i>
+                                    5 Février 2024
+                                </span>
+                                <span class="news-card-category">Annonce</span>
+                            </div>
+                            <h3 class="news-card-title">Rentrée universitaire 2023-2024</h3>
+                            <p class="news-card-text">
+                                Informations importantes concernant la rentrée universitaire 2023-2024 : dates, inscriptions et procédures administratives.
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Article complet bientôt disponible', 'info')">
+                                <i class="fas fa-arrow-right"></i>
+                                Lire la suite
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Pagination -->
+                <div style="display: flex; justify-content: center; gap: var(--spacing-sm); margin-top: var(--spacing-2xl);">
+                    <a href="#" class="btn btn-secondary btn-sm" onclick="showNotification('Page précédente', 'info')">
+                        <i class="fas fa-chevron-left"></i>
+                        Précédent
+                    </a>
+                    <a href="#" class="btn btn-primary btn-sm">1</a>
+                    <a href="#" class="btn btn-secondary btn-sm" onclick="showNotification('Page 2', 'info')">2</a>
+                    <a href="#" class="btn btn-secondary btn-sm" onclick="showNotification('Page 3', 'info')">3</a>
+                    <a href="#" class="btn btn-secondary btn-sm" onclick="showNotification('Page suivante', 'info')">
+                        Suivant
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Événements à venir -->
+        <section class="section" style="background: var(--gray-50);">
+            <div class="container">
+                <h2 class="section-title">Événements à Venir</h2>
+                <p class="section-subtitle">Ne manquez pas nos prochains événements</p>
+                
+                <div class="grid grid-2">
+                    <div class="card">
+                        <div class="card-body">
+                            <div style="display: flex; gap: var(--spacing-lg); align-items: flex-start;">
+                                <div style="background: var(--primary-blue); color: white; padding: var(--spacing-md); border-radius: var(--border-radius-md); text-align: center; min-width: 80px;">
+                                    <div style="font-size: 1.5rem; font-weight: 800;">20</div>
+                                    <div style="font-size: 0.875rem;">Mars</div>
+                                </div>
+                                <div>
+                                    <h3 class="card-title" style="margin-bottom: var(--spacing-sm);">Journée Portes Ouvertes</h3>
+                                    <p class="card-text">
+                                        Venez découvrir la FAST lors de notre journée portes ouvertes. Visites des laboratoires, présentations des formations et rencontres avec les enseignants.
+                                    </p>
+                                    <p style="color: var(--gray-500); font-size: 0.9rem; margin-top: var(--spacing-sm);">
+                                        <i class="fas fa-clock"></i> 9h00 - 17h00 • <i class="fas fa-map-marker-alt"></i> Campus FAST
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div style="display: flex; gap: var(--spacing-lg); align-items: flex-start;">
+                                <div style="background: var(--primary-blue); color: white; padding: var(--spacing-md); border-radius: var(--border-radius-md); text-align: center; min-width: 80px;">
+                                    <div style="font-size: 1.5rem; font-weight: 800;">25</div>
+                                    <div style="font-size: 0.875rem;">Mars</div>
+                                </div>
+                                <div>
+                                    <h3 class="card-title" style="margin-bottom: var(--spacing-sm);">Conférence : L'IA dans la Recherche</h3>
+                                    <p class="card-text">
+                                        Conférence du Professeur Jean Dupont sur l'impact de l'intelligence artificielle dans la recherche scientifique moderne.
+                                    </p>
+                                    <p style="color: var(--gray-500); font-size: 0.9rem; margin-top: var(--spacing-sm);">
+                                        <i class="fas fa-clock"></i> 14h00 - 16h00 • <i class="fas fa-map-marker-alt"></i> Amphithéâtre A
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div style="display: flex; gap: var(--spacing-lg); align-items: flex-start;">
+                                <div style="background: var(--primary-blue); color: white; padding: var(--spacing-md); border-radius: var(--border-radius-md); text-align: center; min-width: 80px;">
+                                    <div style="font-size: 1.5rem; font-weight: 800;">5</div>
+                                    <div style="font-size: 0.875rem;">Avril</div>
+                                </div>
+                                <div>
+                                    <h3 class="card-title" style="margin-bottom: var(--spacing-sm);">Hackathon FAST 2024</h3>
+                                    <p class="card-text">
+                                        48 heures de programmation intensive sur le thème de l'environnement et du développement durable. Prix à gagner !
+                                    </p>
+                                    <p style="color: var(--gray-500); font-size: 0.9rem; margin-top: var(--spacing-sm);">
+                                        <i class="fas fa-clock"></i> 9h00 - <i class="fas fa-calendar"></i> 7 Avril • <i class="fas fa-map-marker-alt"></i> FabLab FAST
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body">
+                            <div style="display: flex; gap: var(--spacing-lg); align-items: flex-start;">
+                                <div style="background: var(--primary-blue); color: white; padding: var(--spacing-md); border-radius: var(--border-radius-md); text-align: center; min-width: 80px;">
+                                    <div style="font-size: 1.5rem; font-weight: 800;">15</div>
+                                    <div style="font-size: 0.875rem;">Avril</div>
+                                </div>
+                                <div>
+                                    <h3 class="card-title" style="margin-bottom: var(--spacing-sm);">Séminaire de Chimie Verte</h3>
+                                    <p class="card-text">
+                                        Séminaire sur les avancées en chimie verte et les procédés durables. Intervenants internationaux.
+                                    </p>
+                                    <p style="color: var(--gray-500); font-size: 0.9rem; margin-top: var(--spacing-sm);">
+                                        <i class="fas fa-clock"></i> 10h00 - 12h00 • <i class="fas fa-map-marker-alt"></i> Salle des conférences
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Newsletter -->
+        <section class="section">
+            <div class="container">
+                <div class="card" style="background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark)); color: white;">
+                    <div class="card-body" style="text-align: center; padding: var(--spacing-2xl);">
+                        <h2 style="color: white; margin-bottom: var(--spacing-md);">
+                            <i class="fas fa-envelope-open-text"></i>
+                            Newsletter FAST
+                        </h2>
+                        <p style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto var(--spacing-xl);">
+                            Inscrivez-vous à notre newsletter pour recevoir les dernières actualités, événements et annonces de la faculté directement dans votre boîte mail.
+                        </p>
+                        <form style="display: flex; gap: var(--spacing-md); max-width: 500px; margin: 0 auto; flex-wrap: wrap;" onsubmit="event.preventDefault(); showNotification('Inscription réussie !', 'success');">
+                            <input type="email" placeholder="Votre adresse email" required style="flex: 1; padding: 0.75rem 1rem; border: none; border-radius: var(--border-radius-md); font-size: 1rem; min-width: 250px;">
+                            <button type="submit" class="btn" style="background: var(--accent-gold); color: var(--gray-900); font-weight: 600;">
+                                <i class="fas fa-paper-plane"></i>
+                                S'inscrire
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-navbar.png" alt="FAST Natitingou" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            FAST
+                            <span>Faculté des Sciences et Techniques de Natitingou</span>
+                        </div>
+                    </div>
+                    <p class="footer-text">
+                        La Faculté des Sciences et Techniques de Natitingou s\'engage pour l\'excellence académique, la recherche innovante et la formation des leaders de demain.
+                    </p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Accueil</a></li>
+                        <li><a href="formations.html" class="footer-link">Formations</a></li>
+                        <li><a href="ressources.html" class="footer-link">Ressources</a></li>
+                        <li><a href="actualites.html" class="footer-link">Actualités</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3 class="footer-title">Liens utiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="departements.html" class="footer-link">Départements</a></li>
+                        <li><a href="etudiants.html" class="footer-link">Espace étudiants</a></li>
+                        <li><a href="ressources.html" class="footer-link">Documents</a></li>
+                        <li><a href="actualites.html" class="footer-link">Calendrier</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Avenue des Sciences<br>10000 Ville Universitaire</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@fast-univ.edu</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+212 5 00 00 00 00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2024 FAST - Faculté des Sciences et Techniques de Natitingou. Tous droits réservés.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

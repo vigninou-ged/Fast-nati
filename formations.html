@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez nos formations en Licence, Master et Doctorat dans les domaines scientifiques et technologiques.">
+    <title>Formations - FAST-NATI</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="shortcut icon" href="images/favicon-32x32.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo-navbar.png" alt="FAST-NATI" class="logo-img">
+                <span class="logo-brand">FAST-NATI</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Accueil</a></li>
+                    <li><a href="faculte.html" class="nav-link">La Faculté</a></li>
+                    <li><a href="departements.html" class="nav-link">Départements</a></li>
+                    <li><a href="formations.html" class="nav-link active">Formations</a></li>
+                    <li><a href="ressources.html" class="nav-link">Ressources</a></li>
+                    <li><a href="etudiants.html" class="nav-link">Espace Étudiants</a></li>
+                    <li><a href="actualites.html" class="nav-link">Actualités</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <a href="index.html#quick-access" class="btn-quick-access">
+                    <i class="fas fa-bolt"></i>
+                    Accès rapide
+                </a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Nos Formations</h1>
+                <p>Des programmes d'excellence de la Licence au Doctorat</p>
+            </div>
+        </section>
+        
+        <!-- Section Formations -->
+        <section class="section">
+            <div class="container">
+                <!-- Onglets -->
+                <div class="formations-tabs">
+                    <button class="tab-btn active" data-tab="licence">Licence</button>
+                    <button class="tab-btn" data-tab="master">Master</button>
+                    <button class="tab-btn" data-tab="doctorat">Doctorat</button>
+                </div>
+                
+                <!-- Contenu Licence -->
+                <div id="licence" class="tab-content active">
+                    <h3 style="text-align: center; margin-bottom: var(--spacing-xl); color: var(--primary-blue);">Licence (6 semestres)</h3>
+                    
+                    <div class="formations-grid">
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Licence en Mathématiques</h4>
+                                <span class="formation-card-badge">L3</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Formation fondamentale en mathématiques couvrant l'algèbre, l'analyse, la géométrie et les probabilités. Prépare aux métiers de l'enseignement et de la recherche.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    6 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    180 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Licence en Informatique</h4>
+                                <span class="formation-card-badge">L3</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Formation complète en informatique : programmation, bases de données, réseaux, développement web et mobile. Forte demande sur le marché du travail.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    6 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    180 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Licence en Physique</h4>
+                                <span class="formation-card-badge">L3</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Étude approfondie de la physique fondamentale et appliquée. Laboratoires équipés pour les travaux pratiques en mécanique, électromagnétisme et optique.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    6 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    180 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Licence en Chimie</h4>
+                                <span class="formation-card-badge">L3</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Formation en chimie organique, inorganique, analytique et physique. Prépare aux carrières dans l'industrie chimique, pharmaceutique et environnementale.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    6 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    180 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Licence en Biologie</h4>
+                                <span class="formation-card-badge">L3</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Étude des sciences de la vie : biologie cellulaire, génétique, microbiologie, écologie. Ouverture vers la recherche biomédicale et environnementale.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    6 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    180 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Licence en Génie Logiciel</h4>
+                                <span class="formation-card-badge">L3</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Spécialisation en développement logiciel, génie logiciel, méthodes agiles et gestion de projets informatiques. Forte employabilité.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    6 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    180 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contenu Master -->
+                <div id="master" class="tab-content">
+                    <h3 style="text-align: center; margin-bottom: var(--spacing-xl); color: var(--primary-blue);">Master (4 semestres)</h3>
+                    
+                    <div class="formations-grid">
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Master en Mathématiques Appliquées</h4>
+                                <span class="formation-card-badge">M2</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Spécialisation en modélisation mathématique, analyse numérique et statistiques avancées. Prépare à la recherche et aux métiers de la data science.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    4 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    120 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Master en Intelligence Artificielle</h4>
+                                <span class="formation-card-badge">M2</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Formation avancée en IA, machine learning, deep learning et traitement du langage naturel. Projets pratiques avec des entreprises partenaires.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    4 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    120 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Master en Cybersécurité</h4>
+                                <span class="formation-card-badge">M2</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Spécialisation en sécurité informatique, cryptographie, analyse de vulnérabilités et forensic. Certification professionnelle incluse.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    4 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    120 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Master en Physique des Matériaux</h4>
+                                <span class="formation-card-badge">M2</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Étude avancée des propriétés physiques des matériaux, nanotechnologies et énergies renouvelables. Collaboration avec des laboratoires de recherche.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    4 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    120 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Master en Biotechnologies</h4>
+                                <span class="formation-card-badge">M2</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Formation en biologie moléculaire, génie génétique et biotechnologies médicales et environnementales. Stages en entreprise et laboratoire.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    4 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    120 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Master en Chimie Analytique</h4>
+                                <span class="formation-card-badge">M2</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Spécialisation en techniques analytiques avancées, chromatographie, spectrométrie et contrôle qualité. Partenariats industriels.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    4 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-user-graduate"></i>
+                                    120 crédits
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contenu Doctorat -->
+                <div id="doctorat" class="tab-content">
+                    <h3 style="text-align: center; margin-bottom: var(--spacing-xl); color: var(--primary-blue);">Doctorat (6 semestres)</h3>
+                    
+                    <div class="formations-grid">
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Doctorat en Mathématiques</h4>
+                                <span class="formation-card-badge">PhD</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Recherche doctorale en mathématiques pures et appliquées. Encadrement par des chercheurs de renommée internationale. Financements disponibles.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    6 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-flask"></i>
+                                    Recherche
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Doctorat en Informatique</h4>
+                                <span class="formation-card-badge">PhD</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Recherche en informatique fondamentale et appliquée : IA, sécurité, systèmes distribués. Cotutelles internationales possibles.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    6 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-flask"></i>
+                                    Recherche
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Doctorat en Physique</h4>
+                                <span class="formation-card-badge">PhD</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Recherche en physique des matériaux, énergie, optique et physique fondamentale. Accès aux équipements de pointe des laboratoires.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    6 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-flask"></i>
+                                    Recherche
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                        
+                        <div class="formation-card">
+                            <div class="formation-card-header">
+                                <h4 class="formation-card-title">Doctorat en Sciences de la Vie</h4>
+                                <span class="formation-card-badge">PhD</span>
+                            </div>
+                            <p class="formation-card-text">
+                                Recherche en biologie moléculaire, génétique, microbiologie et écologie. Collaboration avec des instituts de recherche nationaux et internationaux.
+                            </p>
+                            <div class="formation-card-meta">
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    6 semestres
+                                </span>
+                                <span class="formation-meta-item">
+                                    <i class="fas fa-flask"></i>
+                                    Recherche
+                                </span>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-sm" onclick="showNotification('Programme détaillé bientôt disponible', 'info')">
+                                <i class="fas fa-eye"></i>
+                                Voir le programme
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Informations -->
+        <section class="section" style="background: var(--gray-50);">
+            <div class="container">
+                <h2 class="section-title">Informations Pratiques</h2>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <div class="card-body" style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-md); color: white; font-size: 1.5rem;">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h3 class="card-title">Calendrier universitaire</h3>
+                            <p class="card-text">
+                                Consultez les dates importantes : rentrée, examens, vacances et événements de l'année universitaire.
+                            </p>
+                            <a href="#" class="btn btn-secondary btn-sm" onclick="showNotification('Calendrier bientôt disponible', 'info')">
+                                <i class="fas fa-download"></i>
+                                Télécharger
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body" style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-md); color: white; font-size: 1.5rem;">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3 class="card-title">Guide de l'étudiant</h3>
+                            <p class="card-text">
+                                Tout ce que vous devez savoir sur les procédures d'inscription, les règlements et les services étudiants.
+                            </p>
+                            <a href="#" class="btn btn-secondary btn-sm" onclick="showNotification('Guide bientôt disponible', 'info')">
+                                <i class="fas fa-download"></i>
+                                Télécharger
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-body" style="text-align: center;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--spacing-md); color: white; font-size: 1.5rem;">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <h3 class="card-title">FAQ</h3>
+                            <p class="card-text">
+                                Trouvez les réponses aux questions fréquemment posées sur nos formations et les procédures d'admission.
+                            </p>
+                            <a href="contact.html" class="btn btn-secondary btn-sm">
+                                <i class="fas fa-arrow-right"></i>
+                                Consulter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo-navbar.png" alt="FAST Natitingou" class="footer-logo-img">
+                        <div class="footer-logo-text">
+                            FAST
+                            <span>Faculté des Sciences et Techniques de Natitingou</span>
+                        </div>
+                    </div>
+                    <p class="footer-text">
+                        La Faculté des Sciences et Techniques de Natitingou s\'engage pour l\'excellence académique, la recherche innovante et la formation des leaders de demain.
+                    </p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3 class="footer-title">Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Accueil</a></li>
+                        <li><a href="formations.html" class="footer-link">Formations</a></li>
+                        <li><a href="ressources.html" class="footer-link">Ressources</a></li>
+                        <li><a href="actualites.html" class="footer-link">Actualités</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3 class="footer-title">Liens utiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="departements.html" class="footer-link">Départements</a></li>
+                        <li><a href="etudiants.html" class="footer-link">Espace étudiants</a></li>
+                        <li><a href="ressources.html" class="footer-link">Documents</a></li>
+                        <li><a href="actualites.html" class="footer-link">Calendrier</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact</h3>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Avenue des Sciences<br>10000 Ville Universitaire</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>contact@fast-univ.edu</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+212 5 00 00 00 00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; 2024 FAST - Faculté des Sciences et Techniques de Natitingou. Tous droits réservés.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="footer-social-link" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
