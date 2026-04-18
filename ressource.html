@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ressource — BiblioFAST</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<div class="app-layout">
+  <aside class="app-sidebar" id="sidebar">
+    <a href="dashboard.html" class="sidebar-brand">
+      <div class="logo-mark">BF</div>
+      <span class="logo-text">Biblio<span>FAST</span></span>
+    </a>
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Principal</div>
+      <a href="dashboard.html" class="sidebar-link active"><i class="fas fa-th-large"></i> Bibliothèque</a>
+      <a href="categories.html" class="sidebar-link"><i class="fas fa-folder"></i> Catégories</a>
+      <a href="favoris.html" class="sidebar-link"><i class="fas fa-heart"></i> Mes favoris <span class="badge badge-red" id="fav-count-sidebar" style="display:none;">0</span></a>
+      <div class="sidebar-nav-label">Mon compte</div>
+      <a href="admin.html" class="sidebar-link" id="admin-nav-link" style="display:none;"><i class="fas fa-shield-alt"></i> Administration</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="sidebar-user-avatar js-user-avatar">?</div>
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-name js-user-name">Chargement…</div>
+        <div class="sidebar-user-role js-user-role">Étudiant</div>
+      </div>
+      <button class="sidebar-logout js-logout" title="Se déconnecter"><i class="fas fa-sign-out-alt"></i></button>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+  <div class="app-main">
+    <div class="app-topbar">
+      <div class="topbar-left">
+        <button class="sidebar-mobile-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        <nav class="breadcrumb" style="margin:0;">
+          <a href="dashboard.html">Bibliothèque</a>
+          <span class="sep">/</span>
+          <span class="current" id="breadcrumb-title">Détail</span>
+        </nav>
+      </div>
+      <div class="app-topbar-actions">
+        <button class="btn btn-ghost btn-sm btn-icon js-logout" title="Se déconnecter"><i class="fas fa-sign-out-alt"></i></button>
+      </div>
+    </div>
+
+    <div class="app-content">
+      <div id="detail-loading" class="loading-state">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Chargement…</p>
+      </div>
+
+      <div id="detail-content" style="display:none;">
+        <div class="detail-layout">
+          <div class="detail-main">
+            <div class="detail-preview">
+              <div class="detail-emoji" id="detail-emoji">📄</div>
+              <span class="badge badge-gray" id="detail-type-badge">Type</span>
+            </div>
+            <div class="detail-body">
+              <div class="detail-meta-row" id="detail-badges"></div>
+              <h1 class="detail-title" id="detail-title"></h1>
+              <p class="detail-desc" id="detail-desc"></p>
+              <hr class="divider" style="margin-top:var(--s-8);">
+              <div class="detail-actions" id="action-buttons">
+                <button class="btn btn-outline btn-lg" id="btn-fav">
+                  <i class="fas fa-heart"></i> <span id="fav-label">Ajouter aux favoris</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <aside>
+            <div class="detail-sidebar-card">
+              <h3>Informations</h3>
+              <div class="detail-info-row"><span class="detail-info-label">Type</span><span class="detail-info-val" id="info-type">—</span></div>
+              <div class="detail-info-row"><span class="detail-info-label">Catégorie</span><span class="detail-info-val" id="info-cat">—</span></div>
+              <div class="detail-info-row"><span class="detail-info-label">Niveau</span><span class="detail-info-val" id="info-niveau">—</span></div>
+              <div class="detail-info-row"><span class="detail-info-label">Vues</span><span class="detail-info-val" id="info-vues">—</span></div>
+              <div class="detail-info-row"><span class="detail-info-label">Ajouté le</span><span class="detail-info-val" id="info-date">—</span></div>
+            </div>
+            <div class="detail-sidebar-card">
+              <h3>Navigation</h3>
+              <div class="detail-nav-links">
+                <a href="dashboard.html" class="btn btn-secondary btn-block"><i class="fas fa-arrow-left"></i> Bibliothèque</a>
+                <a href="categories.html" class="btn btn-ghost btn-block"><i class="fas fa-folder"></i> Catégories</a>
+                <a href="favoris.html" class="btn btn-ghost btn-block"><i class="fas fa-heart"></i> Favoris</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div class="empty-state" id="not-found" style="display:none;">
+        <div class="empty-state-icon">🔍</div>
+        <h3>Ressource introuvable</h3>
+        <a href="dashboard.html" class="btn btn-primary" style="margin-top:var(--s-4);">Retour à la bibliothèque</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/utils.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+<script src="js/resources.js"></script>
+<script src="js/ressource.js"></script>
+</body>
+</html>

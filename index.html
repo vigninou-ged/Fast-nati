@@ -1,465 +1,316 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Faculté des Sciences et Techniques de Natitingou - Portail universitaire officiel. Découvrez nos formations, ressources académiques et actualités.">
-    <title>FAST - Faculté des Sciences et Techniques de Natitingou</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="shortcut icon" href="images/favicon-32x32.png">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BiblioFAST — Bibliothèque numérique de la Faculté des Sciences et Techniques de Natitingou.">
+  <title>BiblioFAST — Bibliothèque Numérique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <!-- Skip Link pour accessibilité -->
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-    
-    <!-- Header -->
-    <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <img src="images/logo-navbar.png" alt="FAST-NATI" class="logo-img">
-                <span class="logo-brand">FAST-NATI</span>
+
+  <header class="header" id="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">BF</div>
+        <span class="logo-text">Biblio<span>FAST</span></span>
+      </a>
+      <nav class="header-nav" id="main-nav">
+        <a href="#types">Ressources</a>
+        <a href="#avantages">Avantages</a>
+        <a href="#apercu">Aperçu</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn-outline btn-sm">Se connecter</a>
+      </div>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.getElementById('main-nav').classList.toggle('active')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <div class="hero-pill-dot"></div>
+            Bibliothèque numérique · FAST Natitingou
+          </div>
+          <h1 class="hero-title">
+            Toutes vos ressources<br><span class="accent">au même endroit.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Cours, TD, TP, exercices corrigés, résumés — accédez à la bibliothèque académique complète de la FAST depuis n'importe quel appareil.
+          </p>
+          <div class="hero-actions">
+            <a href="login.html" class="btn btn-primary btn-xl">
+              <i class="fas fa-book-open"></i>
+              Accéder à la bibliothèque
             </a>
-            
-            <button class="menu-toggle" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <nav class="nav">
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Accueil</a></li>
-                    <li><a href="departements.html" class="nav-link">Départements</a></li>
-                    <li><a href="ressources.html" class="nav-link">Ressources</a></li>
-                    <li><a href="banque-epreuves.html" class="nav-link">Banque d\'épreuves</a></li>
-                    <li><a href="etudiants.html" class="nav-link">Espace Étudiants</a></li>
-                    <li><a href="actualites.html" class="nav-link">Actualités</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-                <a href="#quick-access" class="btn-quick-access">
-                    <i class="fas fa-bolt"></i>
-                    Accès rapide
-                </a>
-            </nav>
+            <a href="#apercu" class="btn btn-xl" style="color:rgba(255,255,255,0.65);border:2px solid rgba(255,255,255,0.15);background:transparent;">
+              <i class="fas fa-eye"></i>
+              Voir un aperçu
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div><div class="hero-stat-num">500+</div><div class="hero-stat-label">Ressources</div></div>
+            <div><div class="hero-stat-num">12</div><div class="hero-stat-label">Catégories</div></div>
+            <div><div class="hero-stat-num">5</div><div class="hero-stat-label">Niveaux</div></div>
+            <div><div class="hero-stat-num">24/7</div><div class="hero-stat-label">Accès</div></div>
+          </div>
         </div>
-    </header>
-    
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Excellence académique depuis 1980</span>
-                    </div>
-                    
-                    <h1 class="hero-title">
-                        Faculté des <span>Sciences et Techniques</span>
-                    </h1>
-                    
-                    <p class="hero-subtitle">
-                        Un espace académique dédié à l'enseignement, à la recherche et à l'innovation scientifique. Formez-vous avec les meilleurs dans un environnement d'excellence.
-                    </p>
-                    
-                    <div class="hero-buttons">
-                        <a href="faculte.html" class="btn btn-primary btn-lg">
-                            <i class="fas fa-university"></i>
-                            Découvrir la faculté
-                        </a>
-                        <a href="formations.html" class="btn btn-white btn-lg">
-                            <i class="fas fa-book-open"></i>
-                            Voir les formations
-                        </a>
-                    </div>
-                    
-                    <div class="hero-stats">
-                        <div class="hero-stat">
-                            <div class="hero-stat-number">5,000+</div>
-                            <div class="hero-stat-label">Étudiants</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="hero-stat-number">200+</div>
-                            <div class="hero-stat-label">Enseignants</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="hero-stat-number">5</div>
-                            <div class="hero-stat-label">Départements</div>
-                        </div>
-                        <div class="hero-stat">
-                            <div class="hero-stat-number">40+</div>
-                            <div class="hero-stat-label">Partenariats</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section Présentation -->
-        <section class="section presentation">
-            <div class="container">
-                <div class="presentation-content">
-                    <div class="presentation-image">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop" alt="Campus universitaire FAST">
-                    </div>
-                    
-                    <div class="presentation-text">
-                        <h2>Présentation de la FAST</h2>
-                        <p>
-                            La Faculté des Sciences et Techniques de Natitingou est dédiée à la formation scientifique, à la recherche et au développement des compétences dans les domaines scientifiques et technologiques. Notre mission est de former les leaders de demain à travers une éducation d'excellence.
-                        </p>
-                        <p>
-                            Avec plus de 40 ans d'expérience, nous offrons un environnement d'apprentissage stimulant, des laboratoires de pointe et un corps professoral de renommée internationale.
-                        </p>
-                        
-                        <div class="presentation-features">
-                            <div class="presentation-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Formations accréditées</span>
-                            </div>
-                            <div class="presentation-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Laboratoires modernes</span>
-                            </div>
-                            <div class="presentation-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Recherche innovante</span>
-                            </div>
-                            <div class="presentation-feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Partenariats internationaux</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section Accès Rapide -->
-        <section class="section quick-access" id="quick-access">
-            <div class="container">
-                <h2 class="section-title">Accès Rapide</h2>
-                <p class="section-subtitle">Accédez rapidement aux principales ressources de la faculté</p>
-                
-                <div class="quick-access-grid">
-                    <div class="quick-access-card">
-                        <div class="quick-access-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>Formations</h3>
-                        <p>Découvrez nos programmes de Licence, Master et Doctorat dans les domaines scientifiques.</p>
-                        <a href="formations.html" class="btn btn-primary btn-sm">
-                            <i class="fas fa-arrow-right"></i>
-                            Explorer
-                        </a>
-                    </div>
-                    
-                    <div class="quick-access-card">
-                        <div class="quick-access-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h3>Ressources académiques</h3>
-                        <p>Accédez aux cours, TD, TP et publications scientifiques de la faculté.</p>
-                        <a href="ressources.html" class="btn btn-primary btn-sm">
-                            <i class="fas fa-arrow-right"></i>
-                            Consulter
-                        </a>
-                    </div>
-                    
-                    <div class="quick-access-card">
-                        <div class="quick-access-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Espace étudiants</h3>
-                        <p>Espace dédié aux étudiants : projets, QCM, supports de cours et forum.</p>
-                        <a href="etudiants.html" class="btn btn-primary btn-sm">
-                            <i class="fas fa-arrow-right"></i>
-                            Accéder
-                        </a>
-                    </div>
-                    
-                    <div class="quick-access-card">
-                        <div class="quick-access-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
-                        <h3>Actualités</h3>
-                        <p>Restez informé des dernières actualités, conférences et événements de la FAST.</p>
-                        <a href="actualites.html" class="btn btn-primary btn-sm">
-                            <i class="fas fa-arrow-right"></i>
-                            Lire
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section Départements -->
-        <section class="section" style="background: var(--gray-50);">
-            <div class="container">
-                <h2 class="section-title">Nos Départements</h2>
-                <p class="section-subtitle">Découvrez nos 5 départements d'excellence</p>
-                
-                <div class="departments-grid">
-                    <div class="department-card">
-                        <div class="department-card-header">
-                            <div class="department-card-icon">
-                                <i class="fas fa-square-root-alt"></i>
-                            </div>
-                            <h3 class="department-card-title">Mathématiques</h3>
-                            <p class="department-card-subtitle">Département de Mathématiques</p>
-                        </div>
-                        <div class="department-card-body">
-                            <p class="department-card-text">
-                                Formation en mathématiques fondamentales et appliquées, algèbre, analyse et probabilités.
-                            </p>
-                            <div class="department-card-stats">
-                                <div class="department-stat">
-                                    <div class="department-stat-number">15</div>
-                                    <div class="department-stat-label">Enseignants</div>
-                                </div>
-                                <div class="department-stat">
-                                    <div class="department-stat-number">800</div>
-                                    <div class="department-stat-label">Étudiants</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="department-card">
-                        <div class="department-card-header">
-                            <div class="department-card-icon">
-                                <i class="fas fa-laptop-code"></i>
-                            </div>
-                            <h3 class="department-card-title">Informatique</h3>
-                            <p class="department-card-subtitle">Département d'Informatique</p>
-                        </div>
-                        <div class="department-card-body">
-                            <p class="department-card-text">
-                                Formation en informatique, développement logiciel, intelligence artificielle et cybersécurité.
-                            </p>
-                            <div class="department-card-stats">
-                                <div class="department-stat">
-                                    <div class="department-stat-number">25</div>
-                                    <div class="department-stat-label">Enseignants</div>
-                                </div>
-                                <div class="department-stat">
-                                    <div class="department-stat-number">1200</div>
-                                    <div class="department-stat-label">Étudiants</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="department-card">
-                        <div class="department-card-header">
-                            <div class="department-card-icon">
-                                <i class="fas fa-atom"></i>
-                            </div>
-                            <h3 class="department-card-title">Physique</h3>
-                            <p class="department-card-subtitle">Département de Physique</p>
-                        </div>
-                        <div class="department-card-body">
-                            <p class="department-card-text">
-                                Formation en physique fondamentale, physique appliquée et sciences des matériaux.
-                            </p>
-                            <div class="department-card-stats">
-                                <div class="department-stat">
-                                    <div class="department-stat-number">18</div>
-                                    <div class="department-stat-label">Enseignants</div>
-                                </div>
-                                <div class="department-stat">
-                                    <div class="department-stat-number">600</div>
-                                    <div class="department-stat-label">Étudiants</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: var(--spacing-xl);">
-                    <a href="departements.html" class="btn btn-secondary">
-                        <i class="fas fa-th-large"></i>
-                        Voir tous les départements
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section Actualités -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Dernières Actualités</h2>
-                <p class="section-subtitle">Restez informé de l'actualité de la faculté</p>
-                
-                <div class="news-grid">
-                    <article class="news-card">
-                        <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=400&h=250&fit=crop" alt="Conférence scientifique" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-meta">
-                                <span class="news-card-date">
-                                    <i class="fas fa-calendar"></i>
-                                    15 Mars 2024
-                                </span>
-                                <span class="news-card-category">Conférence</span>
-                            </div>
-                            <h3 class="news-card-title">Conférence internationale sur l'intelligence artificielle</h3>
-                            <p class="news-card-text">
-                                La FAST organise une conférence internationale sur les avancées en intelligence artificielle et machine learning.
-                            </p>
-                            <a href="actualites.html" class="btn btn-primary btn-sm">
-                                <i class="fas fa-arrow-right"></i>
-                                Lire la suite
-                            </a>
-                        </div>
-                    </article>
-                    
-                    <article class="news-card">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&h=250&fit=crop" alt="Remise des diplômes" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-meta">
-                                <span class="news-card-date">
-                                    <i class="fas fa-calendar"></i>
-                                    10 Mars 2024
-                                </span>
-                                <span class="news-card-category">Événement</span>
-                            </div>
-                            <h3 class="news-card-title">Cérémonie de remise des diplômes 2024</h3>
-                            <p class="news-card-text">
-                                Célébration de la remise des diplômes pour la promotion 2023-2024 de la Faculté des Sciences et Techniques de Natitingou.
-                            </p>
-                            <a href="actualites.html" class="btn btn-primary btn-sm">
-                                <i class="fas fa-arrow-right"></i>
-                                Lire la suite
-                            </a>
-                        </div>
-                    </article>
-                    
-                    <article class="news-card">
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=250&fit=crop" alt="Laboratoire recherche" class="news-card-image">
-                        <div class="news-card-body">
-                            <div class="news-card-meta">
-                                <span class="news-card-date">
-                                    <i class="fas fa-calendar"></i>
-                                    5 Mars 2024
-                                </span>
-                                <span class="news-card-category">Recherche</span>
-                            </div>
-                            <h3 class="news-card-title">Nouveau laboratoire de recherche en biotechnologie</h3>
-                            <p class="news-card-text">
-                                Inauguration du nouveau laboratoire de recherche dédié aux biotechnologies et sciences de la vie.
-                            </p>
-                            <a href="actualites.html" class="btn btn-primary btn-sm">
-                                <i class="fas fa-arrow-right"></i>
-                                Lire la suite
-                            </a>
-                        </div>
-                    </article>
-                </div>
-                
-                <div style="text-align: center; margin-top: var(--spacing-xl);">
-                    <a href="actualites.html" class="btn btn-secondary">
-                        <i class="fas fa-newspaper"></i>
-                        Toutes les actualités
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="images/logo-navbar.png" alt="FAST Natitingou" class="footer-logo-img">
-                        <div class="footer-logo-text">
-                            FAST
-                            <span>Faculté des Sciences et Techniques de Natitingou</span>
-                        </div>
-                    </div>
-                    <p class="footer-text">
-                        La Faculté des Sciences et Techniques de Natitingou s'engage pour l'excellence académique, la recherche innovante et la formation des leaders de demain.
-                    </p>
-                </div>
-                
-                <div class="footer-nav">
-                    <h3 class="footer-title">Navigation</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html" class="footer-link">Accueil</a></li>
-                        <li><a href="formations.html" class="footer-link">Formations</a></li>
-                        <li><a href="ressources.html" class="footer-link">Ressources</a></li>
-                        <li><a href="banque-epreuves.html" class="footer-link">Banque d\'épreuves</a></li>
-                        <li><a href="actualites.html" class="footer-link">Actualités</a></li>
-                        <li><a href="contact.html" class="footer-link">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-nav">
-                    <h3 class="footer-title">Liens utiles</h3>
-                    <ul class="footer-links">
-                        <li><a href="departements.html" class="footer-link">Départements</a></li>
-                        <li><a href="etudiants.html" class="footer-link">Espace étudiants</a></li>
-                        <li><a href="ressources.html" class="footer-link">Documents</a></li>
-                        <li><a href="actualites.html" class="footer-link">Calendrier</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h3 class="footer-title">Contact</h3>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>123 Avenue des Sciences<br>10000 Ville Universitaire</p>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>contact@fast-univ.edu</p>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+212 5 00 00 00 00</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2024 FAST - Faculté des Sciences et Techniques de Natitingou. Tous droits réservés.
-                </p>
-                <div class="footer-social">
-                    <a href="#" class="footer-social-link" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="footer-social-link" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="footer-social-link" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="footer-social-link" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
+      </div>
+    </section>
+
+    <!-- TYPES DE RESSOURCES -->
+    <section class="section section-alt" id="types">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Ce que vous trouverez</div>
+          <h2 class="section-title">Tous types de ressources</h2>
+          <p class="section-desc">De la fiche résumé au cours complet, vidéos et exercices corrigés inclus.</p>
         </div>
-    </footer>
-    
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+        <div class="types-grid">
+          <div class="type-card">
+            <div class="type-card-icon" style="background:#fee2e2;">📄</div>
+            <div class="type-card-name">PDF / Cours</div>
+            <div class="type-card-count">210+ documents</div>
+          </div>
+          <div class="type-card">
+            <div class="type-card-icon" style="background:#dbeafe;">📝</div>
+            <div class="type-card-name">TD / TP</div>
+            <div class="type-card-count">130+ travaux</div>
+          </div>
+          <div class="type-card">
+            <div class="type-card-icon" style="background:#f3e8ff;">🎥</div>
+            <div class="type-card-name">Vidéos</div>
+            <div class="type-card-count">60+ vidéos</div>
+          </div>
+          <div class="type-card">
+            <div class="type-card-icon" style="background:#d1fae5;">✅</div>
+            <div class="type-card-name">Exercices corrigés</div>
+            <div class="type-card-count">95+ exercices</div>
+          </div>
+          <div class="type-card">
+            <div class="type-card-icon" style="background:#fef3c7;">📋</div>
+            <div class="type-card-name">Résumés</div>
+            <div class="type-card-count">80+ fiches</div>
+          </div>
+          <div class="type-card">
+            <div class="type-card-icon" style="background:#e0f2fe;">📊</div>
+            <div class="type-card-name">Annales</div>
+            <div class="type-card-count">45+ annales</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVANTAGES -->
+    <section class="section" id="avantages">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Pourquoi BiblioFAST</div>
+          <h2 class="section-title">Conçu pour les étudiants</h2>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-search" style="color:var(--brand-accent)"></i></div>
+            <div class="benefit-text"><h4>Recherche instantanée</h4><p>Trouvez n'importe quelle ressource en quelques secondes grâce à la recherche en temps réel.</p></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-filter" style="color:var(--brand-accent)"></i></div>
+            <div class="benefit-text"><h4>Filtres intelligents</h4><p>Filtrez par catégorie, type, niveau ou département pour trouver exactement ce qu'il vous faut.</p></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-heart" style="color:var(--brand-accent)"></i></div>
+            <div class="benefit-text"><h4>Favoris personnels</h4><p>Sauvegardez vos ressources préférées pour y accéder rapidement à tout moment.</p></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-mobile-alt" style="color:var(--brand-accent)"></i></div>
+            <div class="benefit-text"><h4>Accès mobile</h4><p>Étudiez depuis votre téléphone, tablette ou ordinateur — la bibliothèque vous suit partout.</p></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-download" style="color:var(--brand-accent)"></i></div>
+            <div class="benefit-text"><h4>Téléchargement libre</h4><p>Téléchargez vos documents pour les consulter hors connexion, à votre rythme.</p></div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><i class="fas fa-shield-alt" style="color:var(--brand-accent)"></i></div>
+            <div class="benefit-text"><h4>Accès sécurisé</h4><p>Ressources accessibles uniquement aux étudiants et enseignants inscrits à la FAST.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APERÇU VERROUILLÉ -->
+    <section class="section section-alt" id="apercu">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Aperçu</div>
+          <h2 class="section-title">Un avant-goût de la bibliothèque</h2>
+          <p class="section-desc">Connectez-vous pour accéder à l'intégralité du catalogue.</p>
+        </div>
+        <div style="position:relative;">
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;filter:blur(5px);pointer-events:none;user-select:none;">
+            <div class="resource-card">
+              <div class="resource-card-top">
+                <div class="resource-card-icon-row">
+                  <div class="resource-type-icon type-pdf">PDF</div>
+                  <button class="fav-btn"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="resource-card-title">Algèbre Linéaire — Cours complet L1</div>
+                <div class="resource-card-desc">Espaces vectoriels, matrices, applications linéaires et diagonalisation.</div>
+                <div class="resource-card-meta">
+                  <span class="badge badge-blue">Mathématiques</span>
+                  <span class="badge badge-gray">L1</span>
+                </div>
+              </div>
+              <div class="resource-card-footer">
+                <span style="font-size:0.8rem;color:var(--gray-500);">Il y a 2 jours</span>
+                <button class="btn btn-primary btn-sm">Voir</button>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div class="resource-card-top">
+                <div class="resource-card-icon-row">
+                  <div class="resource-type-icon type-cours">CRS</div>
+                  <button class="fav-btn"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="resource-card-title">Programmation Orientée Objet — Java</div>
+                <div class="resource-card-desc">Classes, objets, héritage, polymorphisme et design patterns.</div>
+                <div class="resource-card-meta">
+                  <span class="badge badge-blue">Informatique</span>
+                  <span class="badge badge-gray">L2</span>
+                </div>
+              </div>
+              <div class="resource-card-footer">
+                <span style="font-size:0.8rem;color:var(--gray-500);">Il y a 5 jours</span>
+                <button class="btn btn-primary btn-sm">Voir</button>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div class="resource-card-top">
+                <div class="resource-card-icon-row">
+                  <div class="resource-type-icon type-exercice">EXO</div>
+                  <button class="fav-btn"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="resource-card-title">Mécanique Newtonienne — Exercices corrigés</div>
+                <div class="resource-card-desc">Série complète d'exercices avec solutions détaillées.</div>
+                <div class="resource-card-meta">
+                  <span class="badge badge-blue">Physique</span>
+                  <span class="badge badge-gray">L1</span>
+                </div>
+              </div>
+              <div class="resource-card-footer">
+                <span style="font-size:0.8rem;color:var(--gray-500);">Il y a 1 semaine</span>
+                <button class="btn btn-primary btn-sm">Voir</button>
+              </div>
+            </div>
+            <div class="resource-card">
+              <div class="resource-card-top">
+                <div class="resource-card-icon-row">
+                  <div class="resource-type-icon type-video">VID</div>
+                  <button class="fav-btn"><i class="fas fa-heart"></i></button>
+                </div>
+                <div class="resource-card-title">Analyse — Intégrales & Séries</div>
+                <div class="resource-card-desc">Vidéo de cours sur les intégrales et les séries numériques.</div>
+                <div class="resource-card-meta">
+                  <span class="badge badge-blue">Mathématiques</span>
+                  <span class="badge badge-gray">L2</span>
+                </div>
+              </div>
+              <div class="resource-card-footer">
+                <span style="font-size:0.8rem;color:var(--gray-500);">Il y a 3 jours</span>
+                <button class="btn btn-primary btn-sm">Voir</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overlay lock -->
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:40px;background:linear-gradient(to bottom,transparent 0%,rgba(241,243,245,0.85) 40%,rgba(241,243,245,1) 70%);">
+            <div style="text-align:center;">
+              <div style="width:52px;height:52px;background:var(--white);border:2px solid var(--gray-200);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.3rem;color:var(--gray-400);box-shadow:var(--shadow-sm);">
+                <i class="fas fa-lock"></i>
+              </div>
+              <h3 style="font-family:var(--font-heading);font-weight:800;font-size:1.2rem;color:var(--gray-900);margin-bottom:6px;">Accès réservé aux membres</h3>
+              <p style="color:var(--gray-500);font-size:0.88rem;margin-bottom:20px;">Connectez-vous pour accéder à l'ensemble de la bibliothèque.</p>
+              <a href="login.html" class="btn btn-primary btn-lg">
+                <i class="fas fa-sign-in-alt"></i>
+                Se connecter
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section section-dark">
+      <div class="container" style="text-align:center;">
+        <div class="section-eyebrow" style="color:rgba(230,57,70,0.8);">Prêt à commencer ?</div>
+        <h2 class="section-title light" style="margin-bottom:var(--s-5);">Rejoignez la bibliothèque numérique</h2>
+        <p class="section-desc light" style="margin:0 auto var(--s-10);">Des centaines de ressources vous attendent. Connectez-vous maintenant.</p>
+        <a href="login.html" class="btn btn-primary btn-xl">
+          <i class="fas fa-book-open"></i>
+          Accéder à la bibliothèque
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="logo-mark">BF</div>
+            <span class="logo-text" style="color:var(--white);">Biblio<span>FAST</span></span>
+          </div>
+          <p>Bibliothèque numérique officielle de la Faculté des Sciences et Techniques de Natitingou.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="login.html">Connexion</a>
+            <a href="dashboard.html">Bibliothèque</a>
+            <a href="categories.html">Catégories</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="#">fast-nati.edu.bj</a>
+            <a href="#">contact@fast-nati.edu.bj</a>
+            <a href="#">Natitingou, Bénin</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 BiblioFAST — Tous droits réservés</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  
+<script src="js/index.js"></script>
 </body>
 </html>
